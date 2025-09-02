@@ -17,6 +17,8 @@
     "colord": "^2.9.3",
     "convert-units": "^2.3.4",
     "nuxt": "^3.13.2",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^5.4.149",
     "pinia": "^2.2.4",
     "vue": "latest"
   },

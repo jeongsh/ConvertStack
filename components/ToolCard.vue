@@ -15,9 +15,9 @@
         </div>
       </div>
       
-      <p class="text-gray-600 dark:text-gray-300 mb-6">
+      <!-- <p class="text-gray-600 dark:text-gray-300 mb-6">
         {{ description }}
-      </p>
+      </p> -->
       
       <div class="space-y-3 mb-6">
         <h4 class="font-semibold text-gray-900 dark:text-white">주요 기능:</h4>

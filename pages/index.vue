@@ -1,14 +1,5 @@
 <template>
   <div class="container mx-auto px-6">
-    <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-        ConvertStack
-      </h1>
-      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-        개발자와 디자이너를 위한 유용한 변환 도구들을 모아놓은 플랫폼입니다.
-        빠르고 정확한 변환으로 작업 효율성을 높여보세요.
-      </p>
-    </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
       <ToolCard
@@ -28,6 +19,20 @@
         to="/tools/unit-converter"
         :features="unitFeatures"
       />
+
+      <ToolCard
+        title="PDF 도구"
+        description="PDF 파일을 병합, 분할, 압축하고 Word 문서와 변환할 수 있습니다."
+        icon="i-heroicons-document-arrow-down"
+        color="red"
+        to="/tools/pdf-converter"
+        :features="pdfFeatures"
+      />
+    </div>
+
+    <!-- 구글 애드 영역 -->
+    <div class="mt-12 mb-12">
+      <GoogleAd type="banner" width="100%" height="90px" />
     </div>
 
     <div class="mt-16 text-center">
@@ -43,6 +48,7 @@
             <UBadge color="gray" variant="soft">QR 코드 생성기</UBadge>
             <UBadge color="gray" variant="soft">JSON 포매터</UBadge>
             <UBadge color="gray" variant="soft">Base64 인코더</UBadge>
+            <UBadge color="gray" variant="soft">이미지 압축기</UBadge>
           </div>
         </div>
       </UCard>
@@ -116,5 +122,12 @@ const unitFeatures = [
   '빠른 변환표',
   '정확한 계산',
   '복사 기능'
+]
+
+const pdfFeatures = [
+  'PDF 파일 병합',
+  'PDF 파일 분할',
+  'PDF 파일 압축',
+  'PDF ↔ Word 변환'
 ]
 </script>

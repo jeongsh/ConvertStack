@@ -75,6 +75,15 @@
                 </p>
               </div>
             </div>
+            <div class="flex items-center gap-3">
+              <UIcon name="i-heroicons-document-arrow-down" class="text-red-500" />
+              <div>
+                <h3 class="font-semibold">PDF 도구</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  PDF 병합, 분할, 압축 및 Word 문서와의 상호 변환
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </UCard>

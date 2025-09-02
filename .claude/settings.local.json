@@ -10,7 +10,10 @@
       "Bash(npx nuxt:*)",
       "Bash(rm:*)",
       "Bash(mkdir:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(taskkill:*)",
+      "Bash(del \"C:\\Users\\panda\\OneDrive\\Desktop\\workspace\\converter\\pages\\tools\\image-converter.vue\")"
     ],
     "deny": [],
     "ask": []
