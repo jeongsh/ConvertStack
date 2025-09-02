@@ -1,7 +1,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxt/ui', '@pinia/nuxt', '@nuxtjs/sitemap', '@nuxtjs/robots'],
+  modules: ['@nuxt/ui', '@nuxt/icon', '@pinia/nuxt', '@nuxtjs/sitemap', '@nuxtjs/robots'],
   css: ['~/assets/css/main.css'],
+  icon: {
+    serverBundle: 'auto'
+  },
   
   // SEO 기본 설정
   app: {

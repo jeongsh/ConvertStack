@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto px-6">
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <ToolCard
         title="색상 변환기"
         description="HEX, RGB, HSL 색상 형식을 실시간으로 변환하고 미리보기할 수 있습니다."
@@ -18,6 +18,15 @@
         color="green"
         to="/tools/unit-converter"
         :features="unitFeatures"
+      />
+
+      <ToolCard
+        title="이미지 변환기"
+        description="JPEG, PNG, WebP 등 이미지 형식을 자유롭게 변환하고 크기를 조정합니다."
+        icon="i-heroicons-photo"
+        color="purple"
+        to="/tools/image-converter"
+        :features="imageFeatures"
       />
 
       <ToolCard
@@ -59,8 +68,8 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'ConvertStack | 무료 온라인 변환기 플랫폼',
-  description: '개발자와 디자이너를 위한 무료 온라인 변환 도구 모음. 색상 변환기(HEX, RGB, HSL), 단위 변환기(길이, 무게, 온도) 등 유용한 도구를 제공합니다.',
-  keywords: '온라인도구, 변환도구, 색상변환기, 단위변환기, 개발자도구, 디자이너도구, 무료도구, HEX RGB 변환, 길이변환',
+  description: '개발자와 디자이너를 위한 무료 온라인 변환 도구 모음. 색상 변환기(HEX, RGB, HSL), 단위 변환기(길이, 무게, 온도), 이미지 변환기(JPEG, PNG, WebP) 등 유용한 도구를 제공합니다.',
+  keywords: '온라인도구, 변환도구, 색상변환기, 단위변환기, 이미지변환기, 개발자도구, 디자이너도구, 무료도구, HEX RGB 변환, 길이변환, JPEG PNG WebP',
   ogTitle: 'ConvertStack | 무료 온라인 변환기 플랫폼',
   ogDescription: '개발자와 디자이너를 위한 무료 온라인 변환 도구 모음',
   ogImage: '/og-home.png',
@@ -103,6 +112,12 @@ useHead({
             "name": "단위 변환기",
             "applicationCategory": "UtilityApplication",
             "url": "https://converter.example.com/tools/unit-converter"
+          },
+          {
+            "@type": "SoftwareApplication", 
+            "name": "이미지 변환기",
+            "applicationCategory": "UtilityApplication",
+            "url": "https://converter.example.com/tools/image-converter"
           }
         ]
       })
@@ -122,6 +137,13 @@ const unitFeatures = [
   '빠른 변환표',
   '정확한 계산',
   '복사 기능'
+]
+
+const imageFeatures = [
+  'JPEG, PNG, WebP 지원',
+  '드래그 앤 드롭',
+  '크기 조정',
+  '품질 설정'
 ]
 
 const pdfFeatures = [
