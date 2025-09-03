@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "title": "ConvertStack | 無料オンライン変換プラットフォーム",
+    "description": "開発者とデザイナーのための無料オンライン変換ツール集。カラー変換（HEX、RGB、HSL）、単位変換（長さ、重量、温度）、画像変換（JPEG、PNG、WebP）など便利なツールを提供。",
+    "keywords": "オンラインツール, 変換ツール, カラー変換, 単位変換, 画像変換, 開発者ツール, デザイナーツール, 無料ツール, HEX RGB変換, 長さ変換, JPEG PNG WebP",
+    "siteTitle": "ConvertStack | 無料オンライン変換ツール",
+    "author": "ConvertStack"
+  },
+  "nav": {
+    "home": "ホーム",
+    "about": "概要",
+    "tools": "ツール",
+    "themeToggle": "テーマ切り替え"
+  },
+  "tools": {
+    "colorConverter": {
+      "title": "カラー変換ツール",
+      "description": "HEX、RGB、HSLのカラー形式をリアルタイムで変換し、プレビューできます。",
+      "features": [
+        "リアルタイム変換",
+        "カラープレビュー",
+        "コントラスト比チェック",
+        "ウェブセーフカラーチェック"
+      ]
+    },
+    "unitConverter": {
+      "title": "単位変換ツール",
+      "description": "長さ、重量、温度、速度など様々な単位を正確に変換します。",
+      "features": [
+        "7つの単位タイプ",
+        "クイック変換表",
+        "精密な計算",
+        "コピー機能"
+      ]
+    },
+    "imageConverter": {
+      "title": "画像変換ツール",
+      "description": "JPEG、PNG、WebPなどの画像形式を自由に変換し、サイズを調整します。",
+      "features": [
+        "JPEG、PNG、WebP対応",
+        "ドラッグ&ドロップ",
+        "画像サイズ調整",
+        "品質設定"
+      ]
+    },
+    "pdfConverter": {
+      "title": "PDFツール",
+      "description": "PDFファイルの結合、分割、圧縮、Wordドキュメントとの変換ができます。",
+      "features": [
+        "PDFファイル結合",
+        "PDFファイル分割",
+        "PDFファイル圧縮",
+        "PDF ↔ Word変換"
+      ]
+    }
+  },
+  "home": {
+    "futureTools": {
+      "title": "もっと多くのツールが準備中です！",
+      "description": "今後のアップデートでより多くの便利なツールをご利用いただけます。",
+      "upcomingTools": {
+        "currencyConverter": "通貨変換ツール",
+        "qrGenerator": "QRコード生成ツール",
+        "jsonFormatter": "JSONフォーマッター",
+        "base64Encoder": "Base64エンコーダー",
+        "imageCompressor": "画像圧縮ツール"
+      }
+    }
+  },
+  "common": {
+    "features": "主要機能",
+    "startConverting": "変換開始",
+    "learnMore": "詳細を見る",
+    "language": "言語",
+    "selectLanguage": "言語選択",
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "success": "正常に完了しました"
+  }
+}

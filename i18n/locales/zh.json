@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "title": "ConvertStack | 免费在线转换平台",
+    "description": "为开发者和设计师提供的免费在线转换工具集。颜色转换器（HEX、RGB、HSL）、单位转换器（长度、重量、温度）、图像转换器（JPEG、PNG、WebP）等实用工具。",
+    "keywords": "在线工具, 转换工具, 颜色转换器, 单位转换器, 图像转换器, 开发者工具, 设计师工具, 免费工具, HEX RGB转换, 长度转换, JPEG PNG WebP",
+    "siteTitle": "ConvertStack | 免费在线转换工具",
+    "author": "ConvertStack"
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "tools": "工具",
+    "themeToggle": "切换主题"
+  },
+  "tools": {
+    "colorConverter": {
+      "title": "颜色转换器",
+      "description": "实时转换HEX、RGB、HSL颜色格式并预览颜色。",
+      "features": [
+        "实时转换",
+        "颜色预览",
+        "对比度检查",
+        "网页安全色检查"
+      ]
+    },
+    "unitConverter": {
+      "title": "单位转换器",
+      "description": "准确转换长度、重量、温度、速度等各种单位。",
+      "features": [
+        "7种单位类型",
+        "快速转换表",
+        "精确计算",
+        "复制功能"
+      ]
+    },
+    "imageConverter": {
+      "title": "图像转换器",
+      "description": "自由转换JPEG、PNG、WebP等图像格式并调整大小。",
+      "features": [
+        "JPEG、PNG、WebP支持",
+        "拖放上传",
+        "图像大小调整",
+        "质量设置"
+      ]
+    },
+    "pdfConverter": {
+      "title": "PDF工具",
+      "description": "合并、拆分、压缩PDF文件，与Word文档相互转换。",
+      "features": [
+        "PDF文件合并",
+        "PDF文件拆分",
+        "PDF文件压缩",
+        "PDF ↔ Word转换"
+      ]
+    }
+  },
+  "home": {
+    "futureTools": {
+      "title": "更多工具即将推出！",
+      "description": "在未来的更新中，您将能够使用更多实用的工具。",
+      "upcomingTools": {
+        "currencyConverter": "货币转换器",
+        "qrGenerator": "二维码生成器",
+        "jsonFormatter": "JSON格式化工具",
+        "base64Encoder": "Base64编码器",
+        "imageCompressor": "图像压缩工具"
+      }
+    }
+  },
+  "common": {
+    "features": "主要功能",
+    "startConverting": "开始转换",
+    "learnMore": "了解更多",
+    "language": "语言",
+    "selectLanguage": "选择语言",
+    "loading": "加载中...",
+    "error": "发生错误",
+    "success": "成功完成"
+  }
+}

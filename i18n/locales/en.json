@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "title": "ConvertStack | Free Online Converter Platform",
+    "description": "Free online conversion tools for developers and designers. Color converter (HEX, RGB, HSL), unit converter (length, weight, temperature), image converter (JPEG, PNG, WebP) and more useful tools.",
+    "keywords": "online tools, conversion tools, color converter, unit converter, image converter, developer tools, designer tools, free tools, HEX RGB conversion, length conversion, JPEG PNG WebP",
+    "siteTitle": "ConvertStack | Free Online Converters",
+    "author": "ConvertStack"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "tools": "Tools",
+    "themeToggle": "Toggle Theme"
+  },
+  "tools": {
+    "colorConverter": {
+      "title": "Color Converter",
+      "description": "Convert HEX, RGB, HSL color formats in real-time with live preview.",
+      "features": [
+        "Real-time conversion",
+        "Color preview",
+        "Contrast ratio check",
+        "Web safe color check"
+      ]
+    },
+    "unitConverter": {
+      "title": "Unit Converter",
+      "description": "Accurately convert various units including length, weight, temperature, and speed.",
+      "features": [
+        "7 unit types",
+        "Quick conversion table",
+        "Accurate calculation",
+        "Copy function"
+      ]
+    },
+    "imageConverter": {
+      "title": "Image Converter",
+      "description": "Convert image formats like JPEG, PNG, WebP and resize images freely.",
+      "features": [
+        "JPEG, PNG, WebP support",
+        "Drag and drop",
+        "Resize images",
+        "Quality settings"
+      ]
+    },
+    "pdfConverter": {
+      "title": "PDF Tools",
+      "description": "Merge, split, compress PDF files and convert with Word documents.",
+      "features": [
+        "PDF file merging",
+        "PDF file splitting",
+        "PDF file compression",
+        "PDF ↔ Word conversion"
+      ]
+    }
+  },
+  "home": {
+    "futureTools": {
+      "title": "More tools are coming soon!",
+      "description": "You'll be able to meet more useful tools in future updates.",
+      "upcomingTools": {
+        "currencyConverter": "Currency Converter",
+        "qrGenerator": "QR Code Generator",
+        "jsonFormatter": "JSON Formatter",
+        "base64Encoder": "Base64 Encoder",
+        "imageCompressor": "Image Compressor"
+      }
+    }
+  },
+  "common": {
+    "features": "Key Features",
+    "startConverting": "Start Converting",
+    "learnMore": "Learn More",
+    "language": "Language",
+    "selectLanguage": "Select Language",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Successfully completed"
+  }
+}

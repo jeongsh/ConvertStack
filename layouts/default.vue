@@ -7,13 +7,16 @@
           <span class="font-bold text-xl">ConvertStack</span>
         </NuxtLink>
 
-        <UButton
-          :icon="isDark ? 'i-heroicons-sun' : 'i-heroicons-moon'"
-          color="gray"
-          variant="ghost"
-          aria-label="테마 변경"
-          @click="toggleDark"
-        />
+        <div class="flex items-center gap-3">
+          <LanguageSelector />
+          <UButton
+            :icon="isDark ? 'i-heroicons-sun' : 'i-heroicons-moon'"
+            color="gray"
+            variant="ghost"
+            :aria-label="t('nav.themeToggle')"
+            @click="toggleDark"
+          />
+        </div>
       </div>
     </header>
 
@@ -21,7 +24,7 @@
       <slot />
     </main>
 
-    <footer class="border-t bg-white dark:bg-gray-800 mt-16">
+    <!-- <footer class="border-t bg-white dark:bg-gray-800 mt-16">
       <div class="container mx-auto px-6 py-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="flex items-center gap-2 mb-4 md:mb-0">
@@ -36,11 +39,12 @@
           </div>
         </div>
       </div>
-    </footer>
+    </footer> -->
   </div>
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
 const isDark = ref(false)
 
 const toggleDark = () => {

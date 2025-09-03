@@ -20,7 +20,7 @@
       </p> -->
       
       <div class="space-y-3 mb-6">
-        <h4 class="font-semibold text-gray-900 dark:text-white">주요 기능:</h4>
+        <h4 class="font-semibold text-gray-900 dark:text-white">{{ t('common.features') }}:</h4>
         <ul class="space-y-2">
           <li 
             v-for="feature in features" 
@@ -44,7 +44,7 @@
           block
           class="group-hover:shadow-md transition-shadow duration-200"
         >
-          도구 사용하기
+          {{ t('common.startConverting') }}
           <template #trailing>
             <UIcon name="i-heroicons-arrow-right" />
           </template>
@@ -55,6 +55,8 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
+
 interface Props {
   title: string
   description: string

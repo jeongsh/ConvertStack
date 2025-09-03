@@ -1,7 +1,48 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxt/ui', '@nuxt/icon', '@pinia/nuxt', '@nuxtjs/sitemap', '@nuxtjs/robots'],
+  modules: ['@nuxt/ui', '@nuxt/icon', '@pinia/nuxt', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxtjs/i18n'],
   css: ['~/assets/css/main.css'],
+  
+  // 다국어 설정
+  i18n: {
+    locales: [
+      {
+        code: 'ko',
+        iso: 'ko-KR',
+        name: '한국어',
+        file: 'ko.json'
+      },
+      {
+        code: 'en',
+        iso: 'en-US',
+        name: 'English',
+        file: 'en.json'
+      },
+      {
+        code: 'ja',
+        iso: 'ja-JP',
+        name: '日本語',
+        file: 'ja.json'
+      },
+      {
+        code: 'zh',
+        iso: 'zh-CN',
+        name: '中文',
+        file: 'zh.json'
+      }
+    ],
+    langDir: 'locales',
+    defaultLocale: 'en',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      alwaysRedirect: false,
+      fallbackLocale: 'en'
+    },
+    strategy: 'prefix_except_default'
+  },
+  
   icon: {
     serverBundle: 'auto'
   },

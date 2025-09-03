@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "title": "ConvertStack | 무료 온라인 변환기 플랫폼",
+    "description": "개발자와 디자이너를 위한 무료 온라인 변환 도구 모음. 색상 변환기(HEX, RGB, HSL), 단위 변환기(길이, 무게, 온도), 이미지 변환기(JPEG, PNG, WebP) 등 유용한 도구를 제공합니다.",
+    "keywords": "온라인도구, 변환도구, 색상변환기, 단위변환기, 이미지변환기, 개발자도구, 디자이너도구, 무료도구, HEX RGB 변환, 길이변환, JPEG PNG WebP",
+    "siteTitle": "ConvertStack | 무료 온라인 변환기",
+    "author": "ConvertStack"
+  },
+  "nav": {
+    "home": "홈",
+    "about": "소개",
+    "tools": "도구",
+    "themeToggle": "테마 변경"
+  },
+  "tools": {
+    "colorConverter": {
+      "title": "색상 변환기",
+      "description": "HEX, RGB, HSL 색상 형식을 실시간으로 변환하고 미리보기할 수 있습니다.",
+      "features": [
+        "실시간 변환",
+        "색상 미리보기", 
+        "대비율 검사",
+        "웹 안전 색상 확인"
+      ]
+    },
+    "unitConverter": {
+      "title": "단위 변환기",
+      "description": "길이, 무게, 온도, 속도 등 다양한 단위를 정확하게 변환합니다.",
+      "features": [
+        "7가지 단위 유형",
+        "빠른 변환표",
+        "정확한 계산", 
+        "복사 기능"
+      ]
+    },
+    "imageConverter": {
+      "title": "이미지 변환기",
+      "description": "JPEG, PNG, WebP 등 이미지 형식을 자유롭게 변환하고 크기를 조정합니다.",
+      "features": [
+        "JPEG, PNG, WebP 지원",
+        "드래그 앤 드롭",
+        "크기 조정",
+        "품질 설정"
+      ]
+    },
+    "pdfConverter": {
+      "title": "PDF 도구",
+      "description": "PDF 파일을 병합, 분할, 압축하고 Word 문서와 변환할 수 있습니다.",
+      "features": [
+        "PDF 파일 병합",
+        "PDF 파일 분할", 
+        "PDF 파일 압축",
+        "PDF ↔ Word 변환"
+      ]
+    }
+  },
+  "home": {
+    "futureTools": {
+      "title": "더 많은 도구가 준비 중입니다!",
+      "description": "향후 업데이트에서 더 많은 유용한 도구들을 만나보실 수 있습니다.",
+      "upcomingTools": {
+        "currencyConverter": "환율 변환기",
+        "qrGenerator": "QR 코드 생성기", 
+        "jsonFormatter": "JSON 포매터",
+        "base64Encoder": "Base64 인코더",
+        "imageCompressor": "이미지 압축기"
+      }
+    }
+  },
+  "common": {
+    "features": "주요 기능",
+    "startConverting": "변환 시작하기",
+    "learnMore": "자세히 알아보기",
+    "language": "언어",
+    "selectLanguage": "언어 선택",
+    "loading": "로딩 중...",
+    "error": "오류가 발생했습니다",
+    "success": "성공적으로 완료되었습니다"
+  }
+}
