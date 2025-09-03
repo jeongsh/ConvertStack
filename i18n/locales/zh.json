@@ -67,6 +67,89 @@
       }
     }
   },
+  "pages": {
+    "colorConverter": {
+      "title": "颜色转换器",
+      "preview": "颜色预览",
+      "currentColor": "当前颜色",
+      "clickToSelect": "点击选择颜色",
+      "colorInfo": "颜色信息",
+      "brightness": "亮度",
+      "saturation": "饱和度",
+      "luminance": "光度",
+      "transparency": "透明度",
+      "webSafeColor": "网页安全色",
+      "webSafe": "网页安全",
+      "yes": "是",
+      "no": "否",
+      "contrastWhite": "对比度（白色）",
+      "contrastBlack": "对比度（黑色）"
+    },
+    "unitConverter": {
+      "title": "单位转换器",
+      "conversionType": "转换类型",
+      "inputValue": "输入值",
+      "inputPlaceholder": "输入数字",
+      "fromUnit": "源单位",
+      "toUnit": "目标单位",
+      "inputLabel": "输入",
+      "result": "结果",
+      "copy": "复制",
+      "quickConversionTable": "快速转换表",
+      "categories": {
+        "length": "长度",
+        "mass": "质量",
+        "temperature": "温度",
+        "speed": "速度",
+        "volume": "体积",
+        "area": "面积",
+        "time": "时间"
+      }
+    },
+    "imageConverter": {
+      "title": "图像转换器",
+      "description": "简单安全地转换图像格式。",
+      "fileUpload": "文件上传",
+      "dropOrClick": "拖放文件或点击选择",
+      "supportedFormats": "支持格式：JPEG、PNG、WebP、GIF、BMP",
+      "conversionSettings": "转换设置",
+      "preview": "预览",
+      "processing": "转换中...",
+      "results": "转换结果",
+      "downloadAll": "全部下载",
+      "startConversion": "开始转换"
+    },
+    "pdfConverter": {
+      "title": "PDF工具",
+      "description": "合并、分割、压缩PDF文件或与Word文档转换。",
+      "tabs": {
+        "merge": "合并",
+        "split": "分割",
+        "compress": "压缩",
+        "convert": "Word转换"
+      },
+      "merge": {
+        "title": "PDF合并",
+        "dropFiles": "拖放PDF文件或点击选择",
+        "startMerge": "开始合并"
+      },
+      "split": {
+        "title": "PDF分割",
+        "dropFile": "选择要分割的PDF文件",
+        "startSplit": "开始分割"
+      },
+      "compress": {
+        "title": "PDF压缩",
+        "dropFile": "选择要压缩的PDF文件",
+        "startCompress": "开始压缩"
+      },
+      "convert": {
+        "title": "PDF ↔ Word转换",
+        "startConvert": "开始转换"
+      },
+      "results": "处理结果"
+    }
+  },
   "common": {
     "features": "主要功能",
     "startConverting": "开始转换",

@@ -7,7 +7,7 @@
         :description="t('tools.colorConverter.description')"
         icon="i-heroicons-swatch"
         color="blue"
-        :to="`${locale}/tools/color-converter`"
+        :to="localePath('/tools/color-converter')"
         :features="colorFeatures"
       />
 
@@ -16,7 +16,7 @@
         :description="t('tools.unitConverter.description')"
         icon="i-heroicons-calculator"
         color="green"
-        :to="`${locale}/tools/unit-converter`"
+        :to="localePath('/tools/unit-converter')"
         :features="unitFeatures"
       />
 
@@ -25,7 +25,7 @@
         :description="t('tools.imageConverter.description')"
         icon="i-heroicons-photo"
         color="purple"
-        :to="`${locale}/tools/image-converter`"
+        :to="localePath('/tools/image-converter')"
         :features="imageFeatures"
       />
 
@@ -34,7 +34,7 @@
         :description="t('tools.pdfConverter.description')"
         icon="i-heroicons-document-arrow-down"
         color="red"
-        :to="`${locale}/tools/pdf-converter`"
+        :to="localePath('/tools/pdf-converter')"
         :features="pdfFeatures"
       />
     </div>
@@ -67,6 +67,7 @@
 
 <script setup lang="ts">
 const { t } = useI18n()
+const localePath = useLocalePath()
 
 // SEO 메타 데이터 설정
 useSeoMeta({

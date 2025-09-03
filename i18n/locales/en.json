@@ -67,6 +67,107 @@
       }
     }
   },
+  "pages": {
+    "colorConverter": {
+      "title": "Color Converter",
+      "preview": "Color Preview",
+      "currentColor": "Current Color",
+      "clickToSelect": "Click to select color",
+      "colorInfo": "Color Information",
+      "brightness": "Brightness",
+      "saturation": "Saturation",
+      "luminance": "Luminance",
+      "transparency": "Transparency",
+      "webSafeColor": "Web Safe Color",
+      "webSafe": "Web Safe",
+      "yes": "Yes",
+      "no": "No",
+      "contrastWhite": "Contrast Ratio (White)",
+      "contrastBlack": "Contrast Ratio (Black)",
+      "seo": {
+        "title": "Free Color Converter | HEX ↔ RGB ↔ HSL Conversion Tool - ConvertStack",
+        "description": "Free online tool to convert HEX, RGB, HSL, RGBA, HSLA color codes in real-time. Features color preview, contrast ratio calculation, and web safe color checking."
+      }
+    },
+    "unitConverter": {
+      "title": "Unit Converter",
+      "conversionType": "Conversion Type",
+      "inputValue": "Input Value",
+      "inputPlaceholder": "Enter number",
+      "fromUnit": "From Unit",
+      "toUnit": "To Unit",
+      "inputLabel": "Input",
+      "result": "Result",
+      "copy": "Copy",
+      "quickConversionTable": "Quick Conversion Table",
+      "categories": {
+        "length": "Length",
+        "mass": "Mass",
+        "temperature": "Temperature",
+        "speed": "Speed",
+        "volume": "Volume",
+        "area": "Area",
+        "time": "Time"
+      },
+      "seo": {
+        "title": "Unit Converter | Length, Weight, Temperature, Speed Conversion Tool - ConvertStack",
+        "description": "Free online tool to convert various units including length, weight, temperature, speed, volume, area, and time in real-time. Supports meters, feet, kilograms, pounds, Celsius, Fahrenheit and more."
+      }
+    },
+    "imageConverter": {
+      "title": "Image Converter",
+      "description": "Convert image formats easily and safely.",
+      "fileUpload": "File Upload",
+      "dropOrClick": "Drag files or click to select",
+      "supportedFormats": "Supported formats: JPEG, PNG, WebP, GIF, BMP",
+      "conversionSettings": "Conversion Settings",
+      "preview": "Preview",
+      "processing": "Converting...",
+      "results": "Conversion Results",
+      "downloadAll": "Download All",
+      "startConversion": "Start Conversion",
+      "seo": {
+        "title": "Image Converter | ConvertStack",
+        "description": "Convert image formats like JPEG, PNG, WebP for free.",
+        "keywords": "image conversion, JPEG, PNG, WebP"
+      }
+    },
+    "pdfConverter": {
+      "title": "PDF Tools",
+      "description": "Merge, split, compress PDF files or convert with Word documents.",
+      "tabs": {
+        "merge": "Merge",
+        "split": "Split",
+        "compress": "Compress",
+        "convert": "Word Convert"
+      },
+      "merge": {
+        "title": "PDF Merge",
+        "dropFiles": "Drag PDF files or click to select",
+        "startMerge": "Start Merge"
+      },
+      "split": {
+        "title": "PDF Split",
+        "dropFile": "Select PDF file to split",
+        "startSplit": "Start Split"
+      },
+      "compress": {
+        "title": "PDF Compress",
+        "dropFile": "Select PDF file to compress",
+        "startCompress": "Start Compress"
+      },
+      "convert": {
+        "title": "PDF ↔ Word Convert",
+        "startConvert": "Start Convert"
+      },
+      "results": "Processing Results",
+      "seo": {
+        "title": "PDF Tools | ConvertStack",
+        "description": "Free online tool to merge, split, compress PDF files and convert with Word documents. Simple and secure PDF processing solution.",
+        "keywords": "PDF merge, PDF split, PDF compress, PDF Word conversion, Word PDF conversion, free PDF tools, online PDF conversion"
+      }
+    }
+  },
   "common": {
     "features": "Key Features",
     "startConverting": "Start Converting",
@@ -75,6 +176,12 @@
     "selectLanguage": "Select Language",
     "loading": "Loading...",
     "error": "An error occurred",
-    "success": "Successfully completed"
+    "success": "Successfully completed",
+    "copy": "Copy",
+    "download": "Download",
+    "processing": "Processing...",
+    "copiedToClipboard": "Copied to clipboard",
+    "copyFailed": "Failed to copy",
+    "conversionError": "Conversion Error"
   }
 }

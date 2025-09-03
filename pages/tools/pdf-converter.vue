@@ -13,10 +13,10 @@
         <div class="w-full max-w-4xl mx-auto">
       <div class="text-center mb-8">
         <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-          PDF 도구
+          {{ $t('pages.pdfConverter.title') }}
         </h1>
         <p class="text-lg text-gray-600 dark:text-gray-300">
-          PDF 파일을 병합, 분할, 압축하거나 Word 문서와 변환할 수 있습니다.
+          {{ $t('pages.pdfConverter.description') }}
         </p>
       </div>
 
@@ -31,7 +31,7 @@
         <template #header>
           <div class="flex items-center gap-3">
             <UIcon name="i-heroicons-document-duplicate" class="text-2xl text-blue-500" />
-            <h2 class="text-xl font-semibold">PDF 병합</h2>
+            <h2 class="text-xl font-semibold">{{ $t('pages.pdfConverter.merge.title') }}</h2>
           </div>
         </template>
 
@@ -448,12 +448,14 @@
 <script setup lang="ts">
 import { usePdfConverter } from '~/stores/pdfConverter'
 
+const { t } = useI18n()
+
 useSeoMeta({
-  title: 'PDF 도구 | ConvertStack',
-  description: 'PDF 파일을 병합, 분할, 압축하고 Word 문서와 변환하는 무료 온라인 도구. 간편하고 안전한 PDF 처리 솔루션.',
-  keywords: 'PDF병합, PDF분할, PDF압축, PDF워드변환, Word PDF변환, 무료PDF도구, 온라인PDF변환',
-  ogTitle: 'PDF 도구 | ConvertStack',
-  ogDescription: 'PDF 파일을 병합, 분할, 압축하고 Word 문서와 변환하는 무료 온라인 도구',
+  title: t('pages.pdfConverter.seo.title', 'PDF 도구 | ConvertStack'),
+  description: t('pages.pdfConverter.seo.description', 'PDF 파일을 병합, 분할, 압축하고 Word 문서와 변환하는 무료 온라인 도구. 간편하고 안전한 PDF 처리 솔루션.'),
+  keywords: t('pages.pdfConverter.seo.keywords', 'PDF병합, PDF분할, PDF압축, PDF워드변환, Word PDF변환, 무료PDF도구, 온라인PDF변환'),
+  ogTitle: t('pages.pdfConverter.seo.title', 'PDF 도구 | ConvertStack'),
+  ogDescription: t('pages.pdfConverter.seo.description', 'PDF 파일을 병합, 분할, 압축하고 Word 문서와 변환하는 무료 온라인 도구'),
   ogImage: '/og-pdf-converter.png'
 })
 
@@ -466,12 +468,12 @@ const isProcessing = ref(false)
 const currentOperation = ref('')
 
 // 탭 정의
-const tabs = [
-  { label: '병합', icon: 'i-heroicons-document-duplicate' },
-  { label: '분할', icon: 'i-heroicons-scissors' },
-  { label: '압축', icon: 'i-heroicons-archive-box-arrow-down' },
-  { label: 'Word 변환', icon: 'i-heroicons-arrow-path' }
-]
+const tabs = computed(() => [
+  { label: t('pages.pdfConverter.tabs.merge'), icon: 'i-heroicons-document-duplicate' },
+  { label: t('pages.pdfConverter.tabs.split'), icon: 'i-heroicons-scissors' },
+  { label: t('pages.pdfConverter.tabs.compress'), icon: 'i-heroicons-archive-box-arrow-down' },
+  { label: t('pages.pdfConverter.tabs.convert'), icon: 'i-heroicons-arrow-path' }
+])
 
 // 파일 상태
 const mergeFiles = ref<File[]>([])

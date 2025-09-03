@@ -1,9 +1,9 @@
 <template>
   <div class="container mx-auto px-6">
     <BaseConverter
-      title="이미지 변환기"
+      :title="$t('pages.imageConverter.title')"
       icon="i-heroicons-photo"
-      description="간단하고 안전하게 이미지 형식을 변환하세요."
+      :description="$t('pages.imageConverter.description')"
     >
       <template #inputs>
         <div class="space-y-8">
@@ -311,11 +311,13 @@
 </template>
 
 <script setup>
+const { t } = useI18n()
+
 // SEO 메타데이터
 useSeoMeta({
-  title: '이미지 변환기 | ConvertStack',
-  description: 'JPEG, PNG, WebP 등 이미지 형식을 무료로 변환하세요.',
-  keywords: '이미지 변환, JPEG, PNG, WebP'
+  title: t('pages.imageConverter.seo.title', '이미지 변환기 | ConvertStack'),
+  description: t('pages.imageConverter.seo.description', 'JPEG, PNG, WebP 등 이미지 형식을 무료로 변환하세요.'),
+  keywords: t('pages.imageConverter.seo.keywords', '이미지 변환, JPEG, PNG, WebP')
 })
 
 // 컴포저블

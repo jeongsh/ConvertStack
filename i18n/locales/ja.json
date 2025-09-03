@@ -67,6 +67,89 @@
       }
     }
   },
+  "pages": {
+    "colorConverter": {
+      "title": "カラーコンバーター",
+      "preview": "カラープレビュー",
+      "currentColor": "現在の色",
+      "clickToSelect": "クリックして色を選択",
+      "colorInfo": "色情報",
+      "brightness": "明度",
+      "saturation": "彩度",
+      "luminance": "輝度",
+      "transparency": "透明度",
+      "webSafeColor": "ウェブセーフカラー",
+      "webSafe": "ウェブセーフ",
+      "yes": "はい",
+      "no": "いいえ",
+      "contrastWhite": "コントラスト比（白）",
+      "contrastBlack": "コントラスト比（黒）"
+    },
+    "unitConverter": {
+      "title": "単位変換器",
+      "conversionType": "変換タイプ",
+      "inputValue": "入力値",
+      "inputPlaceholder": "数値を入力",
+      "fromUnit": "変換前単位",
+      "toUnit": "変換後単位",
+      "inputLabel": "入力",
+      "result": "結果",
+      "copy": "コピー",
+      "quickConversionTable": "クイック変換表",
+      "categories": {
+        "length": "長さ",
+        "mass": "重量",
+        "temperature": "温度",
+        "speed": "速度",
+        "volume": "体積",
+        "area": "面積",
+        "time": "時間"
+      }
+    },
+    "imageConverter": {
+      "title": "画像変換器",
+      "description": "画像形式を簡単かつ安全に変換します。",
+      "fileUpload": "ファイルアップロード",
+      "dropOrClick": "ファイルをドラッグするかクリックして選択",
+      "supportedFormats": "対応形式：JPEG、PNG、WebP、GIF、BMP",
+      "conversionSettings": "変換設定",
+      "preview": "プレビュー",
+      "processing": "変換中...",
+      "results": "変換結果",
+      "downloadAll": "すべてダウンロード",
+      "startConversion": "変換開始"
+    },
+    "pdfConverter": {
+      "title": "PDFツール",
+      "description": "PDFファイルの結合、分割、圧縮、Word文書との変換ができます。",
+      "tabs": {
+        "merge": "結合",
+        "split": "分割",
+        "compress": "圧縮",
+        "convert": "Word変換"
+      },
+      "merge": {
+        "title": "PDF結合",
+        "dropFiles": "PDFファイルをドラッグするかクリックして選択",
+        "startMerge": "結合開始"
+      },
+      "split": {
+        "title": "PDF分割",
+        "dropFile": "分割するPDFファイルを選択",
+        "startSplit": "分割開始"
+      },
+      "compress": {
+        "title": "PDF圧縮",
+        "dropFile": "圧縮するPDFファイルを選択",
+        "startCompress": "圧縮開始"
+      },
+      "convert": {
+        "title": "PDF ↔ Word変換",
+        "startConvert": "変換開始"
+      },
+      "results": "処理結果"
+    }
+  },
   "common": {
     "features": "主要機能",
     "startConverting": "変換開始",

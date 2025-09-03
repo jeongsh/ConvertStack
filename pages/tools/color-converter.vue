@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto p-6">
     <BaseConverter
-      title="색상 변환기"
+      :title="$t('pages.colorConverter.title')"
       icon="i-heroicons-swatch"
     >
       <template #inputs>
@@ -45,7 +45,7 @@
 
       <template #preview>
         <div class="flex flex-col items-center space-y-4">
-          <h3 class="text-lg font-semibold">색상 미리보기</h3>
+          <h3 class="text-lg font-semibold">{{ $t('pages.colorConverter.preview') }}</h3>
           <div class="relative">
             <!-- 숨겨진 네이티브 컬러 피커 -->
             <input
@@ -70,9 +70,9 @@
             </div>
           </div>
           <div class="text-center">
-            <p class="text-sm text-gray-600">현재 색상</p>
+            <p class="text-sm text-gray-600">{{ $t('pages.colorConverter.currentColor') }}</p>
             <p class="font-mono font-medium">{{ store.previewColor }}</p>
-            <p class="text-xs text-gray-500 mt-1">클릭하여 색상 선택</p>
+            <p class="text-xs text-gray-500 mt-1">{{ $t('pages.colorConverter.clickToSelect') }}</p>
           </div>
         </div>
       </template>
@@ -80,42 +80,42 @@
       <template #results>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <UCard>
-            <h4 class="font-semibold mb-2">색상 정보</h4>
+            <h4 class="font-semibold mb-2">{{ $t('pages.colorConverter.colorInfo') }}</h4>
             <div class="space-y-2 text-sm">
               <div class="flex justify-between">
-                <span>밝기:</span>
+                <span>{{ $t('pages.colorConverter.brightness') }}:</span>
                 <span>{{ store.colorInfo.brightness }}%</span>
               </div>
               <div class="flex justify-between">
-                <span>채도:</span>
+                <span>{{ $t('pages.colorConverter.saturation') }}:</span>
                 <span>{{ store.colorInfo.saturation }}%</span>
               </div>
               <div class="flex justify-between">
-                <span>휘도:</span>
+                <span>{{ $t('pages.colorConverter.luminance') }}:</span>
                 <span>{{ store.colorInfo.luminance }}</span>
               </div>
               <div class="flex justify-between">
-                <span>투명도:</span>
+                <span>{{ $t('pages.colorConverter.transparency') }}:</span>
                 <span>{{ Math.round(store.colorInfo.alpha * 100) }}%</span>
               </div>
             </div>
           </UCard>
 
           <UCard>
-            <h4 class="font-semibold mb-2">웹 안전 색상</h4>
+            <h4 class="font-semibold mb-2">{{ $t('pages.colorConverter.webSafeColor') }}</h4>
             <div class="space-y-2 text-sm">
               <div class="flex justify-between">
-                <span>웹 안전:</span>
+                <span>{{ $t('pages.colorConverter.webSafe') }}:</span>
                 <UBadge :color="store.colorInfo.isWebSafe ? 'green' : 'red'">
-                  {{ store.colorInfo.isWebSafe ? '예' : '아니오' }}
+                  {{ store.colorInfo.isWebSafe ? $t('pages.colorConverter.yes') : $t('pages.colorConverter.no') }}
                 </UBadge>
               </div>
               <div class="flex justify-between">
-                <span>대비율 (흰색):</span>
+                <span>{{ $t('pages.colorConverter.contrastWhite') }}:</span>
                 <span>{{ store.colorInfo.contrastWhite }}:1</span>
               </div>
               <div class="flex justify-between">
-                <span>대비율 (검은색):</span>
+                <span>{{ $t('pages.colorConverter.contrastBlack') }}:</span>
                 <span>{{ store.colorInfo.contrastBlack }}:1</span>
               </div>
             </div>
@@ -127,9 +127,11 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
+
 useSeoMeta({
-  title: '무료 색상 변환기 | HEX ↔ RGB ↔ HSL 변환 도구 - ConvertStack',
-  description: 'HEX, RGB, HSL, RGBA, HSLA 색상 코드를 실시간으로 변환하는 무료 온라인 도구입니다. 색상 미리보기, 대비율 계산, 웹 안전 색상 확인 기능을 제공합니다.',
+  title: t('pages.colorConverter.seo.title', '무료 색상 변환기 | HEX ↔ RGB ↔ HSL 변환 도구 - ConvertStack'),
+  description: t('pages.colorConverter.seo.description', 'HEX, RGB, HSL, RGBA, HSLA 색상 코드를 실시간으로 변환하는 무료 온라인 도구입니다. 색상 미리보기, 대비율 계산, 웹 안전 색상 확인 기능을 제공합니다.'),
   keywords: 'HEX RGB 변환, 색상변환기, HEX to RGB, RGB to HSL, 색상코드변환, 컬러피커, 색상도구, 무료색상변환',
   ogTitle: '무료 색상 변환기 | HEX ↔ RGB ↔ HSL 변환 도구 - ConvertStack',
   ogDescription: 'HEX, RGB, HSL 색상 코드를 실시간으로 변환하는 무료 온라인 도구입니다.',

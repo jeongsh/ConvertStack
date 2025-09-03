@@ -16,6 +16,7 @@
 
 <script setup lang="ts">
 const { locale, setLocale } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
 
 const languages = [
   { 
@@ -54,7 +55,7 @@ const currentName = computed(() => {
   return current?.label || '한국어'
 })
 
-const switchLang = (code: 'ko' | 'en' | 'ja' | 'zh') => {
-  setLocale(code)
+const switchLang = async (code: 'ko' | 'en' | 'ja' | 'zh') => {
+  await navigateTo(switchLocalePath(code))
 }
 </script>

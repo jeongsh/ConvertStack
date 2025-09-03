@@ -1,13 +1,13 @@
 <template>
   <div class="container mx-auto p-6">
     <BaseConverter
-      title="단위 변환기"
+      :title="$t('pages.unitConverter.title')"
       icon="i-heroicons-calculator"
     >
       <template #inputs>
         <div class="space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
-            <UFormGroup label="변환 유형">
+            <UFormGroup :label="$t('pages.unitConverter.conversionType')">
               <USelect
                 v-model="selectedCategory"
                 :options="categoryOptions"
@@ -17,16 +17,16 @@
               />
             </UFormGroup>
             
-            <UFormGroup label="입력 값">
+            <UFormGroup :label="$t('pages.unitConverter.inputValue')">
               <UInput
                 v-model="inputValue"
                 type="number"
-                placeholder="숫자 입력"
+                :placeholder="$t('pages.unitConverter.inputPlaceholder')"
                 size="lg"
               />
             </UFormGroup>
             
-            <UFormGroup label="변환 전 단위">
+            <UFormGroup :label="$t('pages.unitConverter.fromUnit')">
               <USelect
                 v-model="fromUnit"
                 :options="availableUnits"
@@ -36,7 +36,7 @@
               />
             </UFormGroup>
             
-            <UFormGroup label="변환 후 단위">
+            <UFormGroup :label="$t('pages.unitConverter.toUnit')">
               <USelect
                 v-model="toUnit"
                 :options="availableUnits"
@@ -54,8 +54,8 @@
           <UCard>
             <template #header>
               <div class="flex items-center justify-between">
-                <h3 class="font-semibold text-lg">입력값</h3>
-                <UBadge color="blue" variant="soft">입력</UBadge>
+                <h3 class="font-semibold text-lg">{{ $t('pages.unitConverter.inputLabel') }}</h3>
+                <UBadge color="blue" variant="soft">{{ $t('pages.unitConverter.inputLabel') }}</UBadge>
               </div>
             </template>
             <div class="space-y-4">
@@ -67,7 +67,7 @@
                   size="sm"
                   @click="copyToClipboard(formattedInput)"
                 >
-                  복사
+                  {{ $t('pages.unitConverter.copy') }}
                 </UButton>
               </div>
             </div>
@@ -76,8 +76,8 @@
           <UCard>
             <template #header>
               <div class="flex items-center justify-between">
-                <h3 class="font-semibold text-lg">결과</h3>
-                <UBadge color="green" variant="soft">결과</UBadge>
+                <h3 class="font-semibold text-lg">{{ $t('pages.unitConverter.result') }}</h3>
+                <UBadge color="green" variant="soft">{{ $t('pages.unitConverter.result') }}</UBadge>
               </div>
             </template>
             <div class="space-y-4">
@@ -89,7 +89,7 @@
                   size="sm"
                   @click="copyToClipboard(formattedResult)"
                 >
-                  복사
+                  {{ $t('pages.unitConverter.copy') }}
                 </UButton>
               </div>
             </div>
@@ -99,7 +99,7 @@
         <div class="mt-6">
           <UCard>
             <template #header>
-              <h4 class="font-semibold">빠른 변환표</h4>
+              <h4 class="font-semibold">{{ $t('pages.unitConverter.quickConversionTable') }}</h4>
             </template>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
@@ -118,9 +118,11 @@
 <script setup lang="ts">
 import convert from 'convert-units'
 
+const { t } = useI18n()
+
 useSeoMeta({
-  title: '단위 변환기 | 길이, 무게, 온도, 속도 변환 무료 툴 - ConvertStack',
-  description: '길이, 무게, 온도, 속도, 부피, 넓이, 시간 단위를 실시간으로 변환하는 무료 온라인 도구입니다. 미터, 피트, 킬로그램, 파운드, 섭씨, 화씨 등 다양한 단위 지원.',
+  title: t('pages.unitConverter.seo.title', '단위 변환기 | 길이, 무게, 온도, 속도 변환 무료 툴 - ConvertStack'),
+  description: t('pages.unitConverter.seo.description', '길이, 무게, 온도, 속도, 부피, 넓이, 시간 단위를 실시간으로 변환하는 무료 온라인 도구입니다. 미터, 피트, 킬로그램, 파운드, 섭씨, 화씨 등 다양한 단위 지원.'),
   keywords: '단위변환기, 길이변환, 무게변환, 온도변환, 속도변환, 미터 피트 변환, 킬로그램 파운드 변환, 섭씨 화씨 변환, 무료단위변환',
   ogTitle: '단위 변환기 | 길이, 무게, 온도, 속도 변환 무료 툴 - ConvertStack',
   ogDescription: '길이, 무게, 온도, 속도 등 다양한 단위를 실시간으로 변환하는 무료 온라인 도구입니다.',
@@ -179,15 +181,15 @@ const inputValue = ref<string>('1')
 const fromUnit = ref<string>('m')
 const toUnit = ref<string>('cm')
 
-const categoryOptions = [
-  { value: 'length', label: '길이' },
-  { value: 'mass', label: '무게' },
-  { value: 'temperature', label: '온도' },
-  { value: 'speed', label: '속도' },
-  { value: 'volume', label: '부피' },
-  { value: 'area', label: '넓이' },
-  { value: 'time', label: '시간' }
-]
+const categoryOptions = computed(() => [
+  { value: 'length', label: t('pages.unitConverter.categories.length') },
+  { value: 'mass', label: t('pages.unitConverter.categories.mass') },
+  { value: 'temperature', label: t('pages.unitConverter.categories.temperature') },
+  { value: 'speed', label: t('pages.unitConverter.categories.speed') },
+  { value: 'volume', label: t('pages.unitConverter.categories.volume') },
+  { value: 'area', label: t('pages.unitConverter.categories.area') },
+  { value: 'time', label: t('pages.unitConverter.categories.time') }
+])
 
 const unitLabels: Record<string, string> = {
   // Length
@@ -270,7 +272,7 @@ const result = computed(() => {
     
     return formatNumber(value)
   } catch (error) {
-    return '변환 오류'
+    return t('common.conversionError')
   }
 })
 
@@ -329,12 +331,12 @@ const copyToClipboard = async (value: string) => {
   try {
     await navigator.clipboard.writeText(value)
     toast.add({
-      title: '클립보드에 복사되었습니다',
+      title: t('common.copiedToClipboard'),
       color: 'green'
     })
   } catch (error) {
     toast.add({
-      title: '복사에 실패했습니다',
+      title: t('common.copyFailed'),
       color: 'red'
     })
   }
