@@ -12,7 +12,7 @@
             <template #header>
               <h3 class="text-lg font-semibold flex items-center gap-2">
                 <UIcon name="i-heroicons-cloud-arrow-up" />
-                이미지 업로드
+                {{ $t('pages.imageConverter.fileUpload') }}
               </h3>
             </template>
 
@@ -44,19 +44,19 @@
                   :class="isDragging ? 'text-primary-500' : 'text-gray-400'"
                 />
                 <p class="text-lg font-medium mb-2">
-                  {{ isDragging ? '파일을 여기에 놓으세요' : '이미지를 드래그하거나 클릭하여 업로드' }}
+                  {{ isDragging ? $t('pages.imageConverter.dropFilesHere') : $t('pages.imageConverter.dragOrClickToUpload') }}
                 </p>
                 <p class="text-sm text-gray-500">
-                  지원 형식: JPEG, PNG, GIF, WebP, BMP (최대 10MB)
+                  {{ $t('pages.imageConverter.supportedFormatsWithSize') }}
                 </p>
               </div>
 
               <!-- 업로드된 파일 목록 -->
               <div v-if="uploadedFiles.length > 0" class="space-y-3">
                 <div class="flex justify-between items-center">
-                  <h4 class="font-medium">업로드된 파일 ({{ uploadedFiles.length }}개)</h4>
+                  <h4 class="font-medium">{{ $t('pages.imageConverter.uploadedFiles') }} ({{ uploadedFiles.length }}{{ $t('pages.imageConverter.filesUploaded') }})</h4>
                   <UButton size="sm" variant="ghost" color="red" @click="clearAllFiles">
-                    모두 제거
+                    {{ $t('pages.imageConverter.clearAll') }}
                   </UButton>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -89,47 +89,47 @@
             <template #header>
               <h3 class="text-lg font-semibold flex items-center gap-2">
                 <UIcon name="i-heroicons-cog-6-tooth" />
-                변환 설정
+                {{ $t('pages.imageConverter.conversionSettings') }}
               </h3>
             </template>
             <div class="space-y-6">
               <!-- 기본 설정 -->
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label class="block text-sm font-medium mb-2">출력 형식</label>
+                  <label class="block text-sm font-medium mb-2">{{ $t('pages.imageConverter.format') }}</label>
                   <USelectMenu v-model="settings.format" :options="formatOptions" />
                 </div>
                 <div v-if="settings.format !== 'png'">
-                  <label class="block text-sm font-medium mb-2">품질: {{ settings.quality }}%</label>
+                  <label class="block text-sm font-medium mb-2">{{ $t('pages.imageConverter.quality') }}: {{ settings.quality }}%</label>
                   <URange v-model="settings.quality" :min="10" :max="100" :step="5" />
                 </div>
               </div>
 
               <!-- 크기 조정 -->
               <div>
-                <label class="block text-sm font-medium mb-2">크기 조정</label>
+                <label class="block text-sm font-medium mb-2">{{ $t('pages.imageConverter.resize') }}</label>
                 <USelectMenu v-model="settings.resize" :options="resizeOptions" />
               </div>
               <div v-if="settings.resize === 'custom'" class="grid grid-cols-2 gap-4">
-                <UInput v-model="settings.customWidth" type="number" placeholder="너비 (px)" label="너비" />
-                <UInput v-model="settings.customHeight" type="number" placeholder="높이 (px)" label="높이" />
+                <UInput v-model="settings.customWidth" type="number" :placeholder="$t('pages.imageConverter.customWidth')" :label="$t('pages.imageConverter.customWidth')" />
+                <UInput v-model="settings.customHeight" type="number" :placeholder="$t('pages.imageConverter.customHeight')" :label="$t('pages.imageConverter.customHeight')" />
               </div>
 
               <!-- 최적화 옵션 -->
               <div class="border-t pt-6">
                 <h4 class="text-sm font-semibold mb-4 flex items-center gap-2">
                   <UIcon name="i-heroicons-sparkles" class="text-amber-500" />
-                  최적화 옵션
+                  {{ $t('pages.imageConverter.optimizationOptions') }}
                 </h4>
                 <div class="space-y-4">
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <UCheckbox v-model="settings.removeMetadata" label="메타데이터 제거 (EXIF)" />
-                    <UCheckbox v-model="settings.webOptimized" label="웹 최적화" />
+                    <UCheckbox v-model="settings.removeMetadata" :label="$t('pages.imageConverter.removeMetadata')" />
+                    <UCheckbox v-model="settings.webOptimized" :label="$t('pages.imageConverter.webOptimized')" />
                   </div>
                   <div v-if="settings.webOptimized" class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
                     <p class="text-sm text-blue-700 dark:text-blue-300">
                       <UIcon name="i-heroicons-information-circle" class="inline mr-1" />
-                      웹 최적화: 파일 크기를 줄이고 로딩 속도를 개선합니다
+                      {{ $t('pages.imageConverter.webOptimizedDescription') }}
                     </p>
                   </div>
                 </div>
@@ -146,7 +146,7 @@
                 class="mt-6"
               >
                 <UIcon name="i-heroicons-arrow-path" class="mr-2" />
-                {{ isConverting ? '변환 중...' : `${uploadedFiles.length}개 파일 변환하기` }}
+                {{ isConverting ? $t('pages.imageConverter.processing') : `${uploadedFiles.length}${$t('pages.imageConverter.filesUploaded')} ${$t('pages.imageConverter.startConversion')}` }}
               </UButton>
             </div>
           </UCard>
@@ -159,7 +159,7 @@
           <template #header>
             <h3 class="text-lg font-semibold flex items-center gap-2">
               <UIcon name="i-heroicons-eye" />
-              미리보기
+              {{ $t('pages.imageConverter.preview') }}
             </h3>
           </template>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -182,7 +182,7 @@
             </div>
           </div>
           <div v-if="uploadedFiles.length > 6" class="mt-4 text-center">
-            <p class="text-sm text-gray-500">그 외 {{ uploadedFiles.length - 6 }}개 파일...</p>
+            <p class="text-sm text-gray-500">{{ $t('pages.imageConverter.andMoreFiles', { count: uploadedFiles.length - 6 }) }}</p>
           </div>
         </UCard>
 
@@ -191,19 +191,19 @@
           <template #header>
             <h3 class="text-lg font-semibold flex items-center gap-2">
               <UIcon name="i-heroicons-arrow-path" class="animate-spin" />
-              변환 진행률
+              {{ $t('pages.imageConverter.conversionProgress') }}
             </h3>
           </template>
           <div class="space-y-4">
             <div class="flex justify-between items-center">
-              <span class="text-sm font-medium">전체 진행률</span>
+              <span class="text-sm font-medium">{{ $t('pages.imageConverter.overallProgress') }}</span>
               <span class="text-sm text-gray-500">{{ conversionProgress.current }}/{{ conversionProgress.total }}</span>
             </div>
             <UProgress :value="conversionProgress.percentage" size="lg" />
             <div v-if="conversionProgress.currentFile" class="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
               <p class="text-sm text-gray-600 dark:text-gray-300">
                 <UIcon name="i-heroicons-document-arrow-down" class="inline mr-1" />
-                변환 중: {{ conversionProgress.currentFile }}
+                {{ $t('pages.imageConverter.convertingFile') }}: {{ conversionProgress.currentFile }}
               </p>
             </div>
           </div>
@@ -218,23 +218,23 @@
               <div>
                 <h3 class="text-lg font-semibold flex items-center gap-2">
                   <UIcon name="i-heroicons-check-circle" class="text-green-500" />
-                  변환 완료 ({{ convertedFiles.length }}개)
+                  {{ $t('pages.imageConverter.conversionComplete') }} ({{ convertedFiles.length }}{{ $t('pages.imageConverter.filesUploaded') }})
                 </h3>
                 <p class="text-sm text-gray-500 mt-1">
-                  총 용량: {{ getTotalSize(convertedFiles) }} 
+                  {{ $t('pages.imageConverter.totalSize') }}: {{ getTotalSize(convertedFiles) }} 
                   <span v-if="getSizeReduction() !== '0%'" class="text-green-600 font-medium">
-                    ({{ getSizeReduction() }} 절약)
+                    ({{ getSizeReduction() }} {{ $t('pages.imageConverter.capacitySaved') }})
                   </span>
                 </p>
               </div>
               <div class="flex gap-2">
                 <UButton @click="downloadAllFiles" color="primary">
                   <UIcon name="i-heroicons-arrow-down-tray" class="mr-2" />
-                  모두 다운로드
+                  {{ $t('pages.imageConverter.downloadAll') }}
                 </UButton>
                 <UButton @click="clearResults" variant="ghost" color="red">
                   <UIcon name="i-heroicons-trash" class="mr-2" />
-                  결과 정리
+                  {{ $t('pages.imageConverter.clearResults') }}
                 </UButton>
               </div>
             </div>
@@ -244,17 +244,17 @@
           <div v-if="conversionStats.length > 0" class="mb-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg text-center">
               <UIcon name="i-heroicons-check-circle" class="text-2xl text-green-500 mx-auto mb-2" />
-              <p class="text-sm text-gray-600 dark:text-gray-300">성공</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">{{ $t('pages.imageConverter.successCount') }}</p>
               <p class="text-xl font-semibold text-green-600">{{ conversionStats.length }}</p>
             </div>
             <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg text-center">
               <UIcon name="i-heroicons-arrow-down" class="text-2xl text-blue-500 mx-auto mb-2" />
-              <p class="text-sm text-gray-600 dark:text-gray-300">용량 절약</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">{{ $t('pages.imageConverter.capacitySaved') }}</p>
               <p class="text-xl font-semibold text-blue-600">{{ getSizeReduction() }}</p>
             </div>
             <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg text-center">
               <UIcon name="i-heroicons-bolt" class="text-2xl text-purple-500 mx-auto mb-2" />
-              <p class="text-sm text-gray-600 dark:text-gray-300">평균 속도</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">{{ $t('pages.imageConverter.averageSpeed') }}</p>
               <p class="text-xl font-semibold text-purple-600">{{ getAverageSpeed() }}</p>
             </div>
           </div>
@@ -292,7 +292,7 @@
                 <div class="flex gap-2">
                   <UButton @click="downloadFile(file)" size="sm" color="primary" class="flex-1">
                     <UIcon name="i-heroicons-arrow-down-tray" class="mr-1" /> 
-                    다운로드
+                    {{ $t('common.download') }}
                   </UButton>
                   <UButton @click="previewFile(file)" size="sm" variant="ghost">
                     <UIcon name="i-heroicons-eye" />
@@ -355,18 +355,18 @@ const conversionStats = ref([])
 const originalTotalSize = ref(0)
 
 // 옵션 데이터
-const formatOptions = [
-  { label: 'JPEG (.jpg)', value: 'jpeg' },
-  { label: 'PNG (.png)', value: 'png' },
-  { label: 'WebP (.webp)', value: 'webp' }
-]
+const formatOptions = computed(() => [
+  { label: t('pages.imageConverter.formatOptions.jpeg'), value: 'jpeg' },
+  { label: t('pages.imageConverter.formatOptions.png'), value: 'png' },
+  { label: t('pages.imageConverter.formatOptions.webp'), value: 'webp' }
+])
 
-const resizeOptions = [
-  { label: '원본 크기 유지', value: 'original' },
-  { label: '50% 축소', value: '50' },
-  { label: '25% 축소', value: '25' },
-  { label: '사용자 정의', value: 'custom' }
-]
+const resizeOptions = computed(() => [
+  { label: t('pages.imageConverter.resizeOptions.original'), value: 'original' },
+  { label: t('pages.imageConverter.resizeOptions.50'), value: '50' },
+  { label: t('pages.imageConverter.resizeOptions.25'), value: '25' },
+  { label: t('pages.imageConverter.resizeOptions.custom'), value: 'custom' }
+])
 
 // ==== 안전한 File type 보정 유틸 (Option A) ====
 const inferMime = (ext) => {
@@ -465,7 +465,7 @@ const processFiles = async (files) => {
   if (validFiles.length > 0) {
     await addFilesToList(validFiles)
     toast.add({
-      title: `${validFiles.length}개 파일이 업로드되었습니다`,
+      title: `${validFiles.length}${t('pages.imageConverter.filesUploaded')}`,
       color: 'green'
     })
   }
@@ -552,7 +552,7 @@ const startConversion = async () => {
     } catch (error) {
       console.error('변환 실패:', error)
       toast.add({
-        title: `변환 실패: ${fileItem.name}`,
+        title: `${t('pages.imageConverter.conversionFailed')}: ${fileItem.name}`,
         color: 'red'
       })
     }
@@ -563,8 +563,8 @@ const startConversion = async () => {
   if (results.length > 0) {
     convertedFiles.value.push(...results)
     toast.add({
-      title: `${results.length}개 파일 변환 완료`,
-      description: `총 ${getSizeReduction()} 용량 절약`,
+      title: `${results.length}${t('pages.imageConverter.conversionCompleteWithCount')}`,
+      description: t('pages.imageConverter.totalSizeSaved', { reduction: getSizeReduction() }),
       color: 'green'
     })
   }
@@ -627,12 +627,12 @@ const convertImageAdvanced = (file) => {
             metadataRemoved: settings.removeMetadata
           })
         } else {
-          reject(new Error('변환 실패'))
+          reject(new Error(t('pages.imageConverter.conversionError')))
         }
       }, mimeType, quality)
     }
     
-    img.onerror = () => reject(new Error('이미지 로드 실패'))
+    img.onerror = () => reject(new Error(t('pages.imageConverter.imageLoadError')))
     
     const reader = new FileReader()
     reader.onload = (e) => {
@@ -710,7 +710,7 @@ const downloadFile = (file) => {
   document.body.removeChild(link)
   
   toast.add({
-    title: '다운로드 시작',
+    title: t('pages.imageConverter.downloadStarted'),
     color: 'green'
   })
 }
@@ -719,8 +719,8 @@ const downloadAllFiles = async () => {
   if (convertedFiles.value.length === 0) return
   
   toast.add({
-    title: '일괄 다운로드 시작',
-    description: `${convertedFiles.value.length}개 파일을 다운로드합니다`,
+    title: t('pages.imageConverter.bulkDownloadStarted'),
+    description: t('pages.imageConverter.filesDownloading', { count: convertedFiles.value.length }),
     color: 'blue'
   })
   

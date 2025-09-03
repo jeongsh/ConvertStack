@@ -12,8 +12,8 @@
               <ConverterCard
                 :model-value="store.hexValue"
                 title="HEX"
-                placeholder="#FF5733"
-                badge="헥스"
+                :placeholder="$t('pages.colorConverter.hexPlaceholder')"
+                badge="HEX"
                 badge-color="blue"
                 :copyable="true"
                 @update:model-value="store.setHexValue"
@@ -22,7 +22,7 @@
               <ConverterCard
                 :model-value="store.rgbValue"
                 title="RGB"
-                placeholder="255, 87, 51"
+                :placeholder="$t('pages.colorConverter.rgbPlaceholder')"
                 badge="RGB"
                 badge-color="green"
                 :copyable="true"
@@ -32,8 +32,8 @@
               <ConverterCard
                 :model-value="store.hslValue"
                 title="HSL"
-                placeholder="9°, 100%, 60%"
-                badge="HSL"
+                :placeholder="$t('pages.colorConverter.hslPlaceholder')"
+                badge="RGB"
                 badge-color="purple"
                 :copyable="true"
                 @update:model-value="store.setHslValue"

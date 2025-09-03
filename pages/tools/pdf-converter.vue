@@ -44,16 +44,16 @@
           >
             <UIcon name="i-heroicons-document-plus" class="text-4xl text-gray-400 mb-4 mx-auto" />
             <p class="text-gray-600 dark:text-gray-300 mb-2">
-              여러 PDF 파일을 선택하거나 드래그하세요
+              {{ $t('pages.pdfConverter.merge.dragMultipleFiles') }}
             </p>
             <p class="text-sm text-gray-500">
-              선택한 순서대로 병합됩니다
+              {{ $t('pages.pdfConverter.merge.mergeOrderNote') }}
             </p>
           </div>
 
           <!-- 업로드된 파일 목록 (병합용) -->
           <div v-if="mergeFiles.length" class="space-y-2">
-            <h4 class="font-semibold">병합할 파일 ({{ mergeFiles.length }}개):</h4>
+            <h4 class="font-semibold">{{ $t('pages.pdfConverter.merge.fileCount') }} ({{ mergeFiles.length }}{{ $t('pages.pdfConverter.merge.filesCount') }}):</h4>
             <div class="space-y-2 max-h-60 overflow-y-auto">
               <div 
                 v-for="(file, index) in mergeFiles" 
@@ -104,7 +104,7 @@
               :disabled="mergeFiles.length < 2"
               @click="mergePDFs"
             >
-              {{ isProcessing ? '병합 중...' : 'PDF 병합하기' }}
+              {{ isProcessing ? $t('pages.pdfConverter.merge.merging') : $t('pages.pdfConverter.merge.startMerge') }}
             </UButton>
           </div>
         </div>
@@ -117,7 +117,7 @@
         <template #header>
           <div class="flex items-center gap-3">
             <UIcon name="i-heroicons-scissors" class="text-2xl text-green-500" />
-            <h2 class="text-xl font-semibold">PDF 분할</h2>
+            <h2 class="text-xl font-semibold">{{ $t('pages.pdfConverter.split.title') }}</h2>
           </div>
         </template>
 
@@ -130,7 +130,7 @@
           >
             <UIcon name="i-heroicons-document-arrow-up" class="text-4xl text-gray-400 mb-4 mx-auto" />
             <p class="text-gray-600 dark:text-gray-300 mb-2">
-              분할할 PDF 파일을 선택하세요
+              {{ $t('pages.pdfConverter.split.dragSingleFile') }}
             </p>
           </div>
 
@@ -155,7 +155,7 @@
               </div>
             </div>
 
-            <UFormGroup label="분할 방식">
+            <UFormGroup :label="$t('pages.pdfConverter.split.splitMode')">
               <URadioGroup
                 v-model="splitMode"
                 :options="splitOptions"
@@ -167,7 +167,7 @@
               <div class="border rounded-lg p-4">
                 <h4 class="font-semibold mb-4 flex items-center gap-2">
                   <UIcon name="i-heroicons-photo" class="text-primary" />
-                  페이지 선택
+                  {{ $t('pages.pdfConverter.split.pageSelection') }}
                 </h4>
                 <ClientOnly>
                   <PdfThumbnailViewer 
@@ -177,7 +177,7 @@
                   <template #fallback>
                     <div class="flex items-center justify-center p-8">
                       <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-primary mr-3"></div>
-                      <span>썸네일 뷰어 로딩 중...</span>
+                      <span>{{ $t('pages.pdfConverter.split.thumbnailLoading') }}</span>
                     </div>
                   </template>
                 </ClientOnly>
@@ -186,21 +186,21 @@
 
             <!-- 기존 텍스트 기반 범위 입력 -->
             <div v-if="splitMode === 'pages'">
-              <UFormGroup label="페이지 범위 (예: 1-5, 8, 10-15)">
+              <UFormGroup :label="$t('pages.pdfConverter.split.pageRangeLabel')">
                 <UInput
                   v-model="pageRanges"
-                  placeholder="1-5, 8, 10-15"
+                  :placeholder="$t('pages.pdfConverter.split.pageRangePlaceholder')"
                 />
                 <template #help>
                   <span class="text-xs text-gray-500">
-                    쉼표로 구분하여 여러 범위를 입력할 수 있습니다. 단일 페이지는 숫자만, 범위는 하이픈(-)으로 구분하세요.
+                    {{ $t('pages.pdfConverter.split.pageRangeHelp') }}
                   </span>
                 </template>
               </UFormGroup>
             </div>
 
             <div v-if="splitMode === 'size'">
-              <UFormGroup label="파일당 최대 페이지 수">
+              <UFormGroup :label="$t('pages.pdfConverter.split.maxPagesPerFile')">
                 <UInput
                   v-model.number="pagesPerFile"
                   type="number"
@@ -212,7 +212,7 @@
 
             <!-- 선택된 범위 미리보기 -->
             <div v-if="visualSelectedRanges.length > 0" class="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-              <h5 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">선택된 분할 범위:</h5>
+              <h5 class="font-semibold text-blue-800 dark:text-blue-200 mb-2">{{ $t('pages.pdfConverter.split.selectedRanges') }}:</h5>
               <div class="flex flex-wrap gap-2">
                 <UBadge 
                   v-for="(range, index) in visualSelectedRanges" 
@@ -220,7 +220,7 @@
                   color="blue"
                   variant="soft"
                 >
-                  페이지 {{ range.start + 1 }}{{ range.start !== range.end ? `-${range.end + 1}` : '' }}
+                  {{ $t('pages.pdfConverter.split.pageLabel') }} {{ range.start + 1 }}{{ range.start !== range.end ? `-${range.end + 1}` : '' }}
                 </UBadge>
               </div>
             </div>
@@ -233,7 +233,7 @@
               @click="splitPDF"
               :disabled="splitMode === 'visual' && visualSelectedRanges.length === 0"
             >
-              {{ isProcessing ? '분할 중...' : 'PDF 분할하기' }}
+              {{ isProcessing ? $t('pages.pdfConverter.split.splitting') : $t('pages.pdfConverter.split.startSplit') }}
             </UButton>
           </div>
         </div>
@@ -246,7 +246,7 @@
         <template #header>
           <div class="flex items-center gap-3">
             <UIcon name="i-heroicons-archive-box-arrow-down" class="text-2xl text-purple-500" />
-            <h2 class="text-xl font-semibold">PDF 압축</h2>
+            <h2 class="text-xl font-semibold">{{ $t('pages.pdfConverter.compress.title') }}</h2>
           </div>
         </template>
 
@@ -259,7 +259,7 @@
           >
             <UIcon name="i-heroicons-document-arrow-up" class="text-4xl text-gray-400 mb-4 mx-auto" />
             <p class="text-gray-600 dark:text-gray-300 mb-2">
-              압축할 PDF 파일을 선택하세요
+              {{ $t('pages.pdfConverter.compress.dragFileToCompress') }}
             </p>
           </div>
 
@@ -284,7 +284,7 @@
               </div>
             </div>
 
-            <UFormGroup label="압축 수준">
+            <UFormGroup :label="$t('pages.pdfConverter.compress.compressionLevel')">
               <USelectMenu
                 v-model="compressionLevel"
                 :options="compressionOptions"
@@ -300,7 +300,7 @@
               :loading="isProcessing"
               @click="compressPDF"
             >
-              {{ isProcessing ? '압축 중...' : 'PDF 압축하기' }}
+              {{ isProcessing ? $t('pages.pdfConverter.compress.compressing') : $t('pages.pdfConverter.compress.startCompress') }}
             </UButton>
           </div>
         </div>
@@ -313,12 +313,12 @@
         <template #header>
           <div class="flex items-center gap-3">
             <UIcon name="i-heroicons-arrow-path" class="text-2xl text-orange-500" />
-            <h2 class="text-xl font-semibold">PDF ↔ Word 변환</h2>
+            <h2 class="text-xl font-semibold">{{ $t('pages.pdfConverter.convert.title') }}</h2>
           </div>
         </template>
 
         <div class="space-y-4">
-          <UFormGroup label="변환 방향">
+          <UFormGroup :label="$t('pages.pdfConverter.convert.conversionDirection')">
             <URadioGroup
               v-model="convertMode"
               :options="convertOptions"
@@ -333,10 +333,10 @@
           >
             <UIcon name="i-heroicons-document-arrow-up" class="text-4xl text-gray-400 mb-4 mx-auto" />
             <p class="text-gray-600 dark:text-gray-300 mb-2">
-              {{ convertMode === 'pdf-to-word' ? 'PDF 파일을 선택하세요' : 'Word 파일을 선택하세요' }}
+              {{ convertMode === 'pdf-to-word' ? $t('pages.pdfConverter.convert.selectPdfFile') : $t('pages.pdfConverter.convert.selectWordFile') }}
             </p>
             <p class="text-sm text-gray-500">
-              지원 형식: {{ convertMode === 'pdf-to-word' ? '.pdf' : '.docx, .doc' }}
+              {{ $t('pages.pdfConverter.convert.supportedFormats') }}: {{ convertMode === 'pdf-to-word' ? '.pdf' : '.docx, .doc' }}
             </p>
           </div>
 
@@ -368,7 +368,7 @@
               :loading="isProcessing"
               @click="convertPDF"
             >
-              {{ isProcessing ? '변환 중...' : (convertMode === 'pdf-to-word' ? 'Word로 변환' : 'PDF로 변환') }}
+              {{ isProcessing ? $t('pages.pdfConverter.convert.converting') : (convertMode === 'pdf-to-word' ? $t('pages.pdfConverter.convert.convertToWord') : $t('pages.pdfConverter.convert.convertToPdf')) }}
             </UButton>
           </div>
         </div>
@@ -380,13 +380,13 @@
       <UCard>
         <template #header>
           <div class="flex justify-between items-center">
-            <h3 class="text-lg font-semibold">처리 결과</h3>
+            <h3 class="text-lg font-semibold">{{ $t('pages.pdfConverter.results') }}</h3>
             <UButton
               v-if="processedFiles.length > 1"
               color="primary"
               @click="downloadAll"
             >
-              모두 다운로드
+              {{ $t('pages.pdfConverter.downloadAll') }}
             </UButton>
           </div>
         </template>
@@ -407,7 +407,7 @@
                   {{ truncateFileName(result.name) }}
                 </span>
               </div>
-              <UBadge color="green" class="flex-shrink-0">완료</UBadge>
+              <UBadge color="green" class="flex-shrink-0">{{ $t('pages.pdfConverter.completed') }}</UBadge>
             </div>
             
             <div class="flex gap-2">
@@ -416,7 +416,7 @@
                 color="primary"
                 @click="downloadFile(result)"
               >
-                다운로드
+                {{ $t('common.download') }}
               </UButton>
             </div>
           </div>
@@ -461,6 +461,7 @@ useSeoMeta({
 
 const pdfConverter = usePdfConverter()
 const fileInput = ref<HTMLInputElement>()
+const toast = useToast()
 
 // 상태 관리
 const selectedTab = ref(0)
@@ -484,29 +485,29 @@ const processedFiles = ref<any[]>([])
 
 // 분할 옵션
 const splitMode = ref('visual')
-const splitOptions = [
-  { label: '시각적 선택으로 분할', value: 'visual' },
-  { label: '특정 페이지 범위로 분할', value: 'pages' },
-  { label: '페이지 수로 균등 분할', value: 'size' }
-]
+const splitOptions = computed(() => [
+  { label: t('pages.pdfConverter.split.visualSplit'), value: 'visual' },
+  { label: t('pages.pdfConverter.split.pageRange'), value: 'pages' },
+  { label: t('pages.pdfConverter.split.equalSplit'), value: 'size' }
+])
 const pageRanges = ref('')
 const pagesPerFile = ref(5)
 const visualSelectedRanges = ref<Array<{start: number, end: number}>>([])
 
 // 압축 옵션
 const compressionLevel = ref('medium')
-const compressionOptions = [
-  { label: '낮음 (고품질)', value: 'low' },
-  { label: '보통', value: 'medium' },
-  { label: '높음 (작은 크기)', value: 'high' }
-]
+const compressionOptions = computed(() => [
+  { label: t('pages.pdfConverter.compressionOptions.low'), value: 'low' },
+  { label: t('pages.pdfConverter.compressionOptions.medium'), value: 'medium' },
+  { label: t('pages.pdfConverter.compressionOptions.high'), value: 'high' }
+])
 
 // 변환 옵션
 const convertMode = ref('pdf-to-word')
-const convertOptions = [
-  { label: 'PDF → Word', value: 'pdf-to-word' },
-  { label: 'Word → PDF', value: 'word-to-pdf' }
-]
+const convertOptions = computed(() => [
+  { label: t('pages.pdfConverter.convertOptions.pdfToWord'), value: 'pdf-to-word' },
+  { label: t('pages.pdfConverter.convertOptions.wordToPdf'), value: 'word-to-pdf' }
+])
 
 // 메서드
 const triggerFileUpload = (operation: string) => {
@@ -631,23 +632,37 @@ const splitPDF = async () => {
   }
 }
 
-const handleVisualSplit = async (rangeData: {pages: number[], start: number, end: number}) => {
+const handleVisualSplit = async (ranges: { start: number; end: number }[]) => {
   if (!splitFile.value) return
   
   try {
     isProcessing.value = true
     currentOperation.value = 'split'
     
+    // 범위에서 페이지 번호들을 추출
+    const pages: number[] = []
+    ranges.forEach(range => {
+      for (let i = range.start; i <= range.end; i++) {
+        pages.push(i)
+      }
+    })
+    
     // 선택된 페이지들을 하나의 PDF로 생성
-    const result = await pdfConverter.splitSelectedPages(splitFile.value, rangeData.pages)
+    const result = await pdfConverter.splitSelectedPages(splitFile.value, pages)
     processedFiles.value = [...processedFiles.value, result]
     
     // 성공 메시지
-    showToast('PDF 분할이 완료되었습니다!')
+    toast.add({
+      title: t('common.success'),
+      color: 'green'
+    })
     
   } catch (error) {
     console.error('PDF 분할 오류:', error)
-    showToast('PDF 분할 중 오류가 발생했습니다.', 'error')
+    toast.add({
+      title: t('common.error'),
+      color: 'red'
+    })
   } finally {
     isProcessing.value = false
     currentOperation.value = ''

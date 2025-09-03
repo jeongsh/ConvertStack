@@ -191,72 +191,19 @@ const categoryOptions = computed(() => [
   { value: 'time', label: t('pages.unitConverter.categories.time') }
 ])
 
-const unitLabels: Record<string, string> = {
-  // Length
-  'mm': '밀리미터',
-  'cm': '센티미터',
-  'm': '미터',
-  'km': '킬로미터',
-  'in': '인치',
-  'ft': '피트',
-  'yd': '야드',
-  'mi': '마일',
-  
-  // Mass
-  'mg': '밀리그램',
-  'g': '그램',
-  'kg': '킬로그램',
-  't': '톤',
-  'oz': '온스',
-  'lb': '파운드',
-  
-  // Temperature
-  'C': '섭씨',
-  'F': '화씨',
-  'K': '켈빈',
-  
-  // Speed
-  'm/s': '미터/초',
-  'km/h': '킬로미터/시간',
-  'mph': '마일/시간',
-  'knot': '노트',
-  
-  // Volume
-  'ml': '밀리리터',
-  'l': '리터',
-  'tsp': '티스푼',
-  'tbsp': '테이블스푼',
-  'cup': '컵',
-  'fl-oz': '액량 온스',
-  
-  // Area
-  'mm2': '제곱밀리미터',
-  'cm2': '제곱센티미터',
-  'm2': '제곱미터',
-  'km2': '제곱킬로미터',
-  'in2': '제곱인치',
-  'ft2': '제곱피트',
-  
-  // Time
-  'ns': '나노초',
-  'mu': '마이크로초',
-  'ms': '밀리초',
-  's': '초',
-  'min': '분',
-  'h': '시간',
-  'd': '일',
-  'week': '주',
-  'month': '월',
-  'year': '년'
-}
-
 const availableUnits = computed(() => {
   try {
     const units = convert().list(selectedCategory.value as any)
-    return units.map((unit: any) => ({
-      value: unit.abbr,
-      label: `${unitLabels[unit.abbr] || unit.plural} (${unit.abbr})`
-    }))
+    return units.map((unit: any) => {
+      const translatedLabel = t(`pages.unitConverter.units.${unit.abbr}`)
+      const label = translatedLabel !== `pages.unitConverter.units.${unit.abbr}` 
+        ? translatedLabel 
+        : unit.plural
+      return {
+        value: unit.abbr,
+        label: `${label} (${unit.abbr})`
+      }
+    })
   } catch (error) {
     return []
   }
@@ -314,7 +261,8 @@ const quickConversions = computed(() => {
 })
 
 const getUnitLabel = (unit: string): string => {
-  return unitLabels[unit] || unit
+  const translatedUnit = t(`pages.unitConverter.units.${unit}`)
+  return translatedUnit !== `pages.unitConverter.units.${unit}` ? translatedUnit : unit
 }
 
 const formatNumber = (num: number): string => {

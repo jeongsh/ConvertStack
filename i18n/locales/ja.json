@@ -83,7 +83,15 @@
       "yes": "はい",
       "no": "いいえ",
       "contrastWhite": "コントラスト比（白）",
-      "contrastBlack": "コントラスト比（黒）"
+      "contrastBlack": "コントラスト比（黒）",
+      "hexPlaceholder": "HEXカラーコードを入力 (例: #FF5733)",
+      "rgbPlaceholder": "RGB値を入力 (例: 255, 87, 51)",
+      "hslPlaceholder": "HSL値を入力 (例: 14, 100%, 60%)",
+      "seo": {
+        "title": "カラーコンバーター | HEX RGB HSL色形式変換ツール - ConvertStack",
+        "description": "無料オンラインカラー変換ツール。HEX、RGB、HSL形式の相互変換に対応。リアルタイムで色をプレビューし、コントラスト比やウェブセーフカラーをチェック。デザイナーと開発者必携のツール。",
+        "keywords": "カラーコンバーター, HEX RGB変換, RGB HSL変換, 色コード変換, ウェブカラーツール, デザイナーツール"
+      }
     },
     "unitConverter": {
       "title": "単位変換器",
@@ -98,12 +106,61 @@
       "quickConversionTable": "クイック変換表",
       "categories": {
         "length": "長さ",
-        "mass": "重量",
+        "mass": "重量", 
         "temperature": "温度",
         "speed": "速度",
         "volume": "体積",
         "area": "面積",
         "time": "時間"
+      },
+      "units": {
+        "mm": "ミリメートル",
+        "cm": "センチメートル",
+        "m": "メートル",
+        "km": "キロメートル",
+        "in": "インチ",
+        "ft": "フィート",
+        "yd": "ヤード",
+        "mi": "マイル",
+        "mg": "ミリグラム",
+        "g": "グラム",
+        "kg": "キログラム",
+        "t": "トン",
+        "oz": "オンス",
+        "lb": "ポンド",
+        "c": "摂氏",
+        "f": "華氏",
+        "k": "ケルビン",
+        "mps": "メートル毎秒",
+        "kmh": "キロメートル毎時",
+        "mph": "マイル毎時",
+        "kn": "ノット",
+        "ml": "ミリリットル",
+        "l": "リットル",
+        "tsp": "ティースプーン",
+        "tbsp": "テーブルスプーン",
+        "cup": "カップ",
+        "fl-oz": "液量オンス",
+        "mm2": "平方ミリメートル",
+        "cm2": "平方センチメートル",
+        "m2": "平方メートル",
+        "km2": "平方キロメートル",
+        "in2": "平方インチ",
+        "ft2": "平方フィート",
+        "ns": "ナノ秒",
+        "mu": "マイクロ秒",
+        "ms": "ミリ秒",
+        "s": "秒",
+        "min": "分",
+        "h": "時間",
+        "d": "日",
+        "week": "週",
+        "month": "月",
+        "year": "年"
+      },
+      "seo": {
+        "title": "単位変換器 | 長さ、重量、温度、速度変換ツール - ConvertStack",
+        "description": "長さ、重量、温度、速度、体積、面積、時間を含む様々な単位をリアルタイムで変換する無料オンラインツール。メートル、フィート、キログラム、ポンド、摂氏、華氏などに対応。"
       }
     },
     "imageConverter": {
@@ -112,12 +169,62 @@
       "fileUpload": "ファイルアップロード",
       "dropOrClick": "ファイルをドラッグするかクリックして選択",
       "supportedFormats": "対応形式：JPEG、PNG、WebP、GIF、BMP",
+      "supportedFormatsWithSize": "対応形式：JPEG、PNG、GIF、WebP、BMP（最大10MB）",
+      "dragOrClickToUpload": "画像をドラッグまたはクリックしてアップロード",
+      "dropFilesHere": "ファイルをここにドロップ",
+      "uploadedFiles": "アップロード済みファイル",
+      "optimizationOptions": "最適化オプション",
+      "webOptimizedDescription": "ウェブ最適化：ファイルサイズを削減し、読み込み速度を向上させます",
+      "conversionProgress": "変換進行状況",
+      "overallProgress": "全体進行率",
+      "convertingFile": "変換中",
+      "andMoreFiles": "他{count}個のファイル...",
+      "successCount": "成功",
+      "averageSpeed": "平均速度",
       "conversionSettings": "変換設定",
       "preview": "プレビュー",
       "processing": "変換中...",
       "results": "変換結果",
       "downloadAll": "すべてダウンロード",
-      "startConversion": "変換開始"
+      "startConversion": "変換開始",
+      "format": "形式",
+      "quality": "品質",
+      "resize": "リサイズ",
+      "removeMetadata": "メタデータ削除",
+      "webOptimized": "Web最適化",
+      "customWidth": "幅を指定",
+      "customHeight": "高さを指定",
+      "clearAll": "すべてクリア",
+      "clearResults": "結果をクリア",
+      "remove": "削除",
+      "filesUploaded": "個",
+      "conversionFailed": "変換に失敗しました",
+      "conversionComplete": "変換が完了しました",
+      "conversionCompleteWithCount": "個のファイルが変換されました",
+      "totalSize": "合計サイズ",
+      "capacitySaved": "の容量を節約しました",
+      "totalSizeSaved": "合計{reduction}の容量を節約しました",
+      "downloadStarted": "ダウンロードを開始しました",
+      "bulkDownloadStarted": "一括ダウンロードを開始しました",
+      "filesDownloading": "{count}個のファイルをダウンロード中",
+      "conversionError": "変換に失敗しました",
+      "imageLoadError": "画像の読み込みに失敗しました",
+      "formatOptions": {
+        "jpeg": "JPEG (.jpg)",
+        "png": "PNG (.png)",
+        "webp": "WebP (.webp)"
+      },
+      "resizeOptions": {
+        "original": "元のサイズを保持",
+        "50": "50%縮小",
+        "25": "25%縮小",
+        "custom": "カスタム"
+      },
+      "seo": {
+        "title": "画像変換器 | ConvertStack",
+        "description": "JPEG、PNG、WebPなどの画像形式を無料で変換。",
+        "keywords": "画像変換, JPEG, PNG, WebP"
+      }
     },
     "pdfConverter": {
       "title": "PDFツール",
@@ -131,23 +238,83 @@
       "merge": {
         "title": "PDF結合",
         "dropFiles": "PDFファイルをドラッグするかクリックして選択",
-        "startMerge": "結合開始"
+        "startMerge": "結合開始",
+        "fileCount": "結合するファイル数",
+        "dragMultipleFiles": "複数のPDFファイルを選択またはドラッグしてください",
+        "mergeOrderNote": "選択した順序で結合されます",
+        "filesCount": "個",
+        "merging": "結合中..."
       },
       "split": {
         "title": "PDF分割",
         "dropFile": "分割するPDFファイルを選択",
-        "startSplit": "分割開始"
+        "startSplit": "分割開始",
+        "splitMode": "分割モード",
+        "visualSplit": "ビジュアル選択分割",
+        "pageRange": "特定ページ範囲分割",
+        "equalSplit": "等分ページ分割",
+        "dragSingleFile": "分割するPDFファイルを選択してください",
+        "pageSelection": "ページ選択",
+        "thumbnailLoading": "サムネイルビューア読み込み中...",
+        "pageRangeLabel": "ページ範囲 (例: 1-5, 8, 10-15)",
+        "pageRangePlaceholder": "1-5, 8, 10-15",
+        "pageRangeHelp": "複数の範囲をカンマで区切って入力できます。単一ページは数字のみ、範囲はハイフン(-)で区切ってください。",
+        "maxPagesPerFile": "ファイル当たりの最大ページ数",
+        "selectedRanges": "選択された分割範囲",
+        "pageLabel": "ページ",
+        "splitting": "分割中..."
       },
       "compress": {
         "title": "PDF圧縮",
         "dropFile": "圧縮するPDFファイルを選択",
-        "startCompress": "圧縮開始"
+        "startCompress": "圧縮開始",
+        "compressionLevel": "圧縮レベル",
+        "dragFileToCompress": "圧縮するPDFファイルを選択してください",
+        "compressing": "圧縮中..."
       },
       "convert": {
         "title": "PDF ↔ Word変換",
-        "startConvert": "変換開始"
+        "startConvert": "変換開始",
+        "conversionMode": "変換モード",
+        "conversionDirection": "変換方向",
+        "selectPdfFile": "PDFファイルを選択してください",
+        "selectWordFile": "Wordファイルを選択してください",
+        "supportedFormats": "対応形式",
+        "converting": "変換中...",
+        "convertToWord": "Wordに変換",
+        "convertToPdf": "PDFに変換"
       },
-      "results": "処理結果"
+      "results": "処理結果",
+      "downloadAll": "すべてダウンロード",
+      "completed": "完了",
+      "compressionOptions": {
+        "low": "低（高品質）",
+        "medium": "中",
+        "high": "高（小サイズ）"
+      },
+      "convertOptions": {
+        "pdfToWord": "PDF → Word",
+        "wordToPdf": "Word → PDF"
+      },
+      "seo": {
+        "title": "PDFツール | ConvertStack",
+        "description": "PDFファイルの結合、分割、圧縮、Word文書との変換を行う無料オンラインツール。シンプルで安全なPDF処理ソリューション。",
+        "keywords": "PDF結合, PDF分割, PDF圧縮, PDF Word変換, Word PDF変換, 無料PDFツール, オンラインPDF変換"
+      },
+      "thumbnailViewer": {
+        "loading": "PDF読み込み中...",
+        "selectAll": "すべて選択",
+        "clearSelection": "選択解除",
+        "pagesSelected": "ページが選択されています",
+        "totalPages": "合計",
+        "pagesUnit": "ページ",
+        "selectedPages": "選択されたページ:",
+        "splitSelected": "選択したページで分割",
+        "loadError": "PDF読み込み中にエラーが発生しました。",
+        "pageAlt": "ページ",
+        "unsupportedFile": "サポートされていないPDFファイルまたは破損したファイルです。",
+        "pdfjsLoadFailed": "PDF.jsの読み込みに失敗しました"
+      }
     }
   },
   "common": {
@@ -158,6 +325,12 @@
     "selectLanguage": "言語選択",
     "loading": "読み込み中...",
     "error": "エラーが発生しました",
-    "success": "正常に完了しました"
+    "success": "正常に完了しました",
+    "copy": "コピー",
+    "download": "ダウンロード",
+    "processing": "処理中...",
+    "copiedToClipboard": "クリップボードにコピーしました",
+    "copyFailed": "コピーに失敗しました",
+    "conversionError": "変換エラー"
   }
 }

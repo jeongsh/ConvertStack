@@ -3,7 +3,7 @@
     <div v-if="isLoading" class="flex items-center justify-center p-8">
       <div class="flex items-center gap-3">
         <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-primary"></div>
-        <span>PDF 로딩 중...</span>
+        <span>{{ $t('pages.pdfConverter.thumbnailViewer.loading') }}</span>
       </div>
     </div>
 
@@ -13,25 +13,29 @@
         <div class="flex items-center gap-4">
           <UButton
             size="sm"
-            variant="outline"
+            color="primary"
+            variant="solid"
             @click="selectAll"
           >
-            모두 선택
+            {{ $t('pages.pdfConverter.thumbnailViewer.selectAll') }}
           </UButton>
           <UButton
             size="sm"
+            color="gray"
             variant="outline"
             @click="clearSelection"
           >
-            선택 해제
+            {{ $t('pages.pdfConverter.thumbnailViewer.clearSelection') }}
           </UButton>
           <span class="text-sm text-gray-600">
-            {{ selectedPages.length }}개 페이지 선택됨
+            {{ selectedPages.length }}{{ $t('pages.pdfConverter.thumbnailViewer.pagesSelected') }}
           </span>
         </div>
         
         <div class="flex items-center gap-2">
-          <span class="text-sm text-gray-600">전체 {{ totalPages }}페이지</span>
+          <span class="text-sm text-gray-600">
+            {{ $t('pages.pdfConverter.thumbnailViewer.totalPages') }} {{ totalPages }}{{ $t('pages.pdfConverter.thumbnailViewer.pagesUnit') }}
+          </span>
         </div>
       </div>
 
@@ -55,13 +59,13 @@
         >
           <!-- 썸네일 이미지 -->
           <div class="relative border-2 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-               :class="{
-                 'border-primary bg-primary/10': selectedPages.includes(index) || (isSelecting && isPageInSelectionRange(index)),
-                 'border-gray-200 dark:border-gray-700': !selectedPages.includes(index) && !(isSelecting && isPageInSelectionRange(index))
-               }">
+            :class="{
+              'border-primary bg-primary/10': selectedPages.includes(index) || (isSelecting && isPageInSelectionRange(index)),
+              'border-gray-200 dark:border-gray-700': !selectedPages.includes(index) && !(isSelecting && isPageInSelectionRange(index))
+            }">
             <img
               :src="thumbnail.dataUrl"
-              :alt="`Page ${index + 1}`"
+              :alt="`${$t('pages.pdfConverter.thumbnailViewer.pageAlt')} ${index + 1}`"
               class="w-full h-auto block"
               draggable="false"
             />
@@ -93,7 +97,7 @@
 
       <!-- 선택된 범위 정보 -->
       <div v-if="selectedPages.length > 0" class="mt-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-        <h4 class="font-semibold mb-2">선택된 페이지:</h4>
+        <h4 class="font-semibold mb-2">{{ $t('pages.pdfConverter.thumbnailViewer.selectedPages') }}</h4>
         <p class="text-sm text-gray-600 dark:text-gray-300">
           {{ getSelectedRangesText() }}
         </p>
@@ -104,7 +108,7 @@
             @click="handleSplitSelected()"
             :disabled="selectedPages.length === 0"
           >
-            선택된 페이지로 분할
+            {{ $t('pages.pdfConverter.thumbnailViewer.splitSelected') }}
           </UButton>
         </div>
       </div>
@@ -112,7 +116,7 @@
 
     <div v-else-if="error" class="text-center p-8 text-red-600">
       <UIcon name="i-heroicons-exclamation-triangle" class="text-4xl mb-2" />
-      <p>PDF 로드 중 오류가 발생했습니다.</p>
+      <p>{{ $t('pages.pdfConverter.thumbnailViewer.loadError') }}</p>
       <p class="text-sm mt-1">{{ error }}</p>
     </div>
   </div>
@@ -134,7 +138,7 @@ const initPdfjs = async () => {
       const workerBlob = new Blob([workerCode], { type: 'application/javascript' })
       pdfjsLib.GlobalWorkerOptions.workerSrc = URL.createObjectURL(workerBlob)
     } catch (error) {
-      console.warn('로컬 worker 로드 실패, 기본 CDN 사용')
+      console.warn('Local worker load failed, using default CDN')
       pdfjsLib.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.js`
     }
   }
@@ -155,6 +159,7 @@ interface Emits {
 
 const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
+const { t } = useI18n()
 
 // 상태 관리
 const thumbnails = ref<ThumbnailData[]>([])
@@ -182,7 +187,7 @@ const loadPdfThumbnails = async (file: File) => {
     await initPdfjs()
     
     if (!pdfjsLib) {
-      throw new Error('PDF.js 로드 실패')
+      throw new Error(t('pages.pdfConverter.thumbnailViewer.pdfjsLoadFailed'))
     }
 
     const arrayBuffer = await file.arrayBuffer()
@@ -197,8 +202,8 @@ const loadPdfThumbnails = async (file: File) => {
 
     thumbnails.value = await Promise.all(thumbnailPromises)
   } catch (err) {
-    console.error('PDF 로드 오류:', err)
-    error.value = '지원되지 않는 PDF 파일이거나 손상된 파일입니다.'
+    console.error('PDF load error:', err)
+    error.value = t('pages.pdfConverter.thumbnailViewer.unsupportedFile')
   } finally {
     isLoading.value = false
   }
@@ -342,16 +347,11 @@ const getSelectedRanges = () => {
 
 // 선택된 페이지 분할 처리
 const handleSplitSelected = () => {
-  // 선택된 페이지들을 하나의 범위로 전달 (연속되지 않은 페이지들도 하나로 합침)
-  const allSelectedPages = [...selectedPages.value]
-  const combinedRange = {
-    pages: allSelectedPages,
-    start: Math.min(...allSelectedPages),
-    end: Math.max(...allSelectedPages)
-  }
+  // 선택된 페이지를 연속 범위로 그룹화하여 배열로 전달
+  const ranges = getSelectedRanges()
   
   // 부모 컴포넌트에 전달
-  emit('split-selected', combinedRange)
+  emit('split-selected', ranges)
   
   // 선택 해제
   selectedPages.value = []

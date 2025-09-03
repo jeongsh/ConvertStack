@@ -83,7 +83,15 @@
       "yes": "是",
       "no": "否",
       "contrastWhite": "对比度（白色）",
-      "contrastBlack": "对比度（黑色）"
+      "contrastBlack": "对比度（黑色）",
+      "hexPlaceholder": "输入HEX颜色代码 (例: #FF5733)",
+      "rgbPlaceholder": "输入RGB值 (例: 255, 87, 51)",
+      "hslPlaceholder": "输入HSL值 (例: 14, 100%, 60%)",
+      "seo": {
+        "title": "颜色转换器 | HEX RGB HSL颜色格式转换工具 - ConvertStack",
+        "description": "免费在线颜色转换工具，支持HEX、RGB、HSL格式相互转换。实时预览颜色效果，检查对比度和网页安全色。设计师和开发者必备工具。",
+        "keywords": "颜色转换器, HEX转RGB, RGB转HSL, 颜色代码转换, 网页颜色工具, 设计师工具"
+      }
     },
     "unitConverter": {
       "title": "单位转换器",
@@ -104,6 +112,55 @@
         "volume": "体积",
         "area": "面积",
         "time": "时间"
+      },
+      "units": {
+        "mm": "毫米",
+        "cm": "厘米",
+        "m": "米",
+        "km": "千米",
+        "in": "英寸",
+        "ft": "英尺",
+        "yd": "码",
+        "mi": "英里",
+        "mg": "毫克",
+        "g": "克",
+        "kg": "千克",
+        "t": "吨",
+        "oz": "盎司",
+        "lb": "磅",
+        "c": "摄氏度",
+        "f": "华氏度",
+        "k": "开尔文",
+        "mps": "米每秒",
+        "kmh": "千米每小时",
+        "mph": "英里每小时",
+        "kn": "节",
+        "ml": "毫升",
+        "l": "升",
+        "tsp": "茶匙",
+        "tbsp": "汤匙",
+        "cup": "杯",
+        "fl-oz": "液体盎司",
+        "mm2": "平方毫米",
+        "cm2": "平方厘米",
+        "m2": "平方米",
+        "km2": "平方千米",
+        "in2": "平方英寸",
+        "ft2": "平方英尺",
+        "ns": "纳秒",
+        "mu": "微秒",
+        "ms": "毫秒",
+        "s": "秒",
+        "min": "分钟",
+        "h": "小时",
+        "d": "天",
+        "week": "周",
+        "month": "月",
+        "year": "年"
+      },
+      "seo": {
+        "title": "单位转换器 | 长度、重量、温度、速度转换工具 - ConvertStack",
+        "description": "免费在线工具，实时转换长度、重量、温度、速度、体积、面积和时间等各种单位。支持米、英尺、千克、磅、摄氏度、华氏度等。"
       }
     },
     "imageConverter": {
@@ -112,12 +169,62 @@
       "fileUpload": "文件上传",
       "dropOrClick": "拖放文件或点击选择",
       "supportedFormats": "支持格式：JPEG、PNG、WebP、GIF、BMP",
+      "supportedFormatsWithSize": "支持格式：JPEG、PNG、GIF、WebP、BMP（最大10MB）",
+      "dragOrClickToUpload": "拖拽图片或点击上传",
+      "dropFilesHere": "将文件拖放到此处",
+      "uploadedFiles": "已上传文件",
+      "optimizationOptions": "优化选项",
+      "webOptimizedDescription": "网络优化：减少文件大小并提高加载速度",
+      "conversionProgress": "转换进度",
+      "overallProgress": "总体进度",
+      "convertingFile": "转换中",
+      "andMoreFiles": "另外{count}个文件...",
+      "successCount": "成功",
+      "averageSpeed": "平均速度",
       "conversionSettings": "转换设置",
       "preview": "预览",
       "processing": "转换中...",
       "results": "转换结果",
       "downloadAll": "全部下载",
-      "startConversion": "开始转换"
+      "startConversion": "开始转换",
+      "format": "格式",
+      "quality": "质量",
+      "resize": "调整大小",
+      "removeMetadata": "删除元数据",
+      "webOptimized": "网络优化",
+      "customWidth": "自定义宽度",
+      "customHeight": "自定义高度",
+      "clearAll": "清除全部",
+      "clearResults": "清除结果",
+      "remove": "删除",
+      "filesUploaded": "个",
+      "conversionFailed": "转换失败",
+      "conversionComplete": "转换完成",
+      "conversionCompleteWithCount": "个文件已转换",
+      "totalSize": "总大小",
+      "capacitySaved": "容量已节省",
+      "totalSizeSaved": "总共节省了{reduction}容量",
+      "downloadStarted": "下载已开始",
+      "bulkDownloadStarted": "批量下载已开始",
+      "filesDownloading": "正在下载{count}个文件",
+      "conversionError": "转换失败",
+      "imageLoadError": "图像加载失败",
+      "formatOptions": {
+        "jpeg": "JPEG (.jpg)",
+        "png": "PNG (.png)",
+        "webp": "WebP (.webp)"
+      },
+      "resizeOptions": {
+        "original": "保持原始大小",
+        "50": "缩小50%",
+        "25": "缩小25%",
+        "custom": "自定义"
+      },
+      "seo": {
+        "title": "图像转换器 | ConvertStack",
+        "description": "免费转换JPEG、PNG、WebP等图像格式。",
+        "keywords": "图像转换, JPEG, PNG, WebP"
+      }
     },
     "pdfConverter": {
       "title": "PDF工具",
@@ -131,23 +238,83 @@
       "merge": {
         "title": "PDF合并",
         "dropFiles": "拖放PDF文件或点击选择",
-        "startMerge": "开始合并"
+        "startMerge": "开始合并",
+        "fileCount": "要合并的文件",
+        "dragMultipleFiles": "选择或拖拽多个PDF文件",
+        "mergeOrderNote": "将按照选择的顺序合并文件",
+        "filesCount": "个",
+        "merging": "合并中..."
       },
       "split": {
         "title": "PDF分割",
         "dropFile": "选择要分割的PDF文件",
-        "startSplit": "开始分割"
+        "startSplit": "开始分割",
+        "splitMode": "分割模式",
+        "visualSplit": "可视化选择分割",
+        "pageRange": "指定页面范围分割",
+        "equalSplit": "等分页面分割",
+        "dragSingleFile": "选择要分割的PDF文件",
+        "pageSelection": "页面选择",
+        "thumbnailLoading": "缩略图查看器加载中...",
+        "pageRangeLabel": "页面范围 (例如: 1-5, 8, 10-15)",
+        "pageRangePlaceholder": "1-5, 8, 10-15",
+        "pageRangeHelp": "可以输入用逗号分隔的多个范围。单页用数字表示，范围用连字符(-)分隔。",
+        "maxPagesPerFile": "每个文件的最大页数",
+        "selectedRanges": "选择的分割范围",
+        "pageLabel": "页面",
+        "splitting": "分割中..."
       },
       "compress": {
         "title": "PDF压缩",
         "dropFile": "选择要压缩的PDF文件",
-        "startCompress": "开始压缩"
+        "startCompress": "开始压缩",
+        "compressionLevel": "压缩级别",
+        "dragFileToCompress": "选择要压缩的PDF文件",
+        "compressing": "压缩中..."
       },
       "convert": {
         "title": "PDF ↔ Word转换",
-        "startConvert": "开始转换"
+        "startConvert": "开始转换",
+        "conversionMode": "转换模式",
+        "conversionDirection": "转换方向",
+        "selectPdfFile": "选择PDF文件",
+        "selectWordFile": "选择Word文件",
+        "supportedFormats": "支持格式",
+        "converting": "转换中...",
+        "convertToWord": "转换为Word",
+        "convertToPdf": "转换为PDF"
       },
-      "results": "处理结果"
+      "results": "处理结果",
+      "downloadAll": "全部下载",
+      "completed": "完成",
+      "compressionOptions": {
+        "low": "低（高质量）",
+        "medium": "中",
+        "high": "高（小尺寸）"
+      },
+      "convertOptions": {
+        "pdfToWord": "PDF → Word",
+        "wordToPdf": "Word → PDF"
+      },
+      "seo": {
+        "title": "PDF工具 | ConvertStack",
+        "description": "免费在线工具，用于合并、分割、压缩PDF文件和与Word文档转换。简单安全的PDF处理解决方案。",
+        "keywords": "PDF合并, PDF分割, PDF压缩, PDF Word转换, Word PDF转换, 免费PDF工具, 在线PDF转换"
+      },
+      "thumbnailViewer": {
+        "loading": "PDF加载中...",
+        "selectAll": "全部选择",
+        "clearSelection": "取消选择",
+        "pagesSelected": "页已选择",
+        "totalPages": "共",
+        "pagesUnit": "页",
+        "selectedPages": "已选择页面:",
+        "splitSelected": "按选择页面分割",
+        "loadError": "PDF加载时发生错误。",
+        "pageAlt": "页面",
+        "unsupportedFile": "不支持的PDF文件或损坏的文件。",
+        "pdfjsLoadFailed": "PDF.js加载失败"
+      }
     }
   },
   "common": {
@@ -158,6 +325,12 @@
     "selectLanguage": "选择语言",
     "loading": "加载中...",
     "error": "发生错误",
-    "success": "成功完成"
+    "success": "成功完成",
+    "copy": "复制",
+    "download": "下载",
+    "processing": "处理中...",
+    "copiedToClipboard": "已复制到剪贴板",
+    "copyFailed": "复制失败",
+    "conversionError": "转换错误"
   }
 }
