@@ -3,6 +3,24 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <ToolCard
+        :title="t('tools.pdfConverter.title')"
+        :description="t('tools.pdfConverter.description')"
+        icon="i-heroicons-document-arrow-down"
+        color="red"
+        :to="localePath('/tools/pdf-converter')"
+        :features="pdfFeatures"
+      />
+
+      <ToolCard
+        :title="t('tools.imageConverter.title')"
+        :description="t('tools.imageConverter.description')"
+        icon="i-heroicons-photo"
+        color="purple"
+        :to="localePath('/tools/image-converter')"
+        :features="imageFeatures"
+      />
+
+      <ToolCard
         :title="t('tools.colorConverter.title')"
         :description="t('tools.colorConverter.description')"
         icon="i-heroicons-swatch"
@@ -18,24 +36,6 @@
         color="green"
         :to="localePath('/tools/unit-converter')"
         :features="unitFeatures"
-      />
-
-      <ToolCard
-        :title="t('tools.imageConverter.title')"
-        :description="t('tools.imageConverter.description')"
-        icon="i-heroicons-photo"
-        color="purple"
-        :to="localePath('/tools/image-converter')"
-        :features="imageFeatures"
-      />
-
-      <ToolCard
-        :title="t('tools.pdfConverter.title')"
-        :description="t('tools.pdfConverter.description')"
-        icon="i-heroicons-document-arrow-down"
-        color="red"
-        :to="localePath('/tools/pdf-converter')"
-        :features="pdfFeatures"
       />
     </div>
 
