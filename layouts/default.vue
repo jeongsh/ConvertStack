@@ -3,7 +3,7 @@
     <header class="fixed top-0 left-0 right-0 z-50 border-b bg-white dark:bg-black border-gray-200 dark:border-gray-800 backdrop-blur-sm bg-white/95 dark:bg-black/95">
       <div class="container mx-auto px-6 h-16 flex items-center justify-between">
         <NuxtLink to="/" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <UIcon name="i-heroicons-wrench-screwdriver" class="text-2xl text-primary" />
+          <UIcon name="i-heroicons-arrow-path" class="text-2xl text-primary" />
           <span class="font-bold text-xl text-gray-900 dark:text-gray-100">ConvertStack</span>
         </NuxtLink>
 

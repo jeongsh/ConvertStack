@@ -1,66 +1,84 @@
 <template>
   <div class="container mx-auto px-6 py-8">
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <ToolCard
-        :title="t('tools.pdfConverter.title')"
-        :description="t('tools.pdfConverter.description')"
-        icon="i-heroicons-document-arrow-down"
-        color="red"
-        :to="localePath('/tools/pdf-converter')"
-        :features="pdfFeatures"
-      />
-
-      <ToolCard
-        :title="t('tools.imageConverter.title')"
-        :description="t('tools.imageConverter.description')"
-        icon="i-heroicons-photo"
-        color="purple"
-        :to="localePath('/tools/image-converter')"
-        :features="imageFeatures"
-      />
-
-      <ToolCard
-        :title="t('tools.colorConverter.title')"
-        :description="t('tools.colorConverter.description')"
-        icon="i-heroicons-swatch"
-        color="blue"
-        :to="localePath('/tools/color-converter')"
-        :features="colorFeatures"
-      />
-
-      <ToolCard
-        :title="t('tools.unitConverter.title')"
-        :description="t('tools.unitConverter.description')"
-        icon="i-heroicons-calculator"
-        color="green"
-        :to="localePath('/tools/unit-converter')"
-        :features="unitFeatures"
-      />
-    </div>
-
-    <!-- 구글 애드 영역 -->
-    <div class="mt-12 mb-12">
-      <GoogleAd type="banner" width="100%" height="90px" />
-    </div>
-
-    <div class="mt-16 text-center">
-      <UCard class="max-w-2xl mx-auto">
-        <div class="text-center space-y-4">
-          <UIcon name="i-heroicons-rocket-launch" class="text-3xl text-primary" />
-          <h2 class="text-2xl font-semibold">{{ t('home.futureTools.title') }}</h2>
-          <p class="text-gray-600 dark:text-gray-300">
-            {{ t('home.futureTools.description') }}
-          </p>
-          <div class="flex flex-wrap justify-center gap-2 pt-4">
-            <UBadge color="gray" variant="soft">{{ t('home.futureTools.upcomingTools.currencyConverter') }}</UBadge>
-            <UBadge color="gray" variant="soft">{{ t('home.futureTools.upcomingTools.qrGenerator') }}</UBadge>
-            <UBadge color="gray" variant="soft">{{ t('home.futureTools.upcomingTools.jsonFormatter') }}</UBadge>
-            <UBadge color="gray" variant="soft">{{ t('home.futureTools.upcomingTools.base64Encoder') }}</UBadge>
-            <UBadge color="gray" variant="soft">{{ t('home.futureTools.upcomingTools.imageCompressor') }}</UBadge>
-          </div>
+    <div class="flex gap-20 max-w-8xl mx-auto">
+      <!-- 좌측 사이드바 광고 -->
+      <div class="hidden xl:block w-40 flex-shrink-0">
+        <div class="sticky top-6">
+          <GoogleAd type="sidebar" width="160px" height="600px" />
         </div>
-      </UCard>
+      </div>
+
+      <!-- 메인 콘텐츠 -->
+      <div class="flex-1 min-w-0">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <ToolCard
+            :title="t('tools.pdfConverter.title')"
+            :description="t('tools.pdfConverter.description')"
+            icon="i-heroicons-document-arrow-down"
+            color="red"
+            :to="localePath('/tools/pdf-converter')"
+            :features="pdfFeatures"
+          />
+
+          <ToolCard
+            :title="t('tools.imageConverter.title')"
+            :description="t('tools.imageConverter.description')"
+            icon="i-heroicons-photo"
+            color="green"
+            :to="localePath('/tools/image-converter')"
+            :features="imageFeatures"
+          />
+
+          <ToolCard
+            :title="t('tools.colorConverter.title')"
+            :description="t('tools.colorConverter.description')"
+            icon="i-heroicons-swatch"
+            color="purple"
+            :to="localePath('/tools/color-converter')"
+            :features="colorFeatures"
+          />
+
+          <ToolCard
+            :title="t('tools.unitConverter.title')"
+            :description="t('tools.unitConverter.description')"
+            icon="i-heroicons-calculator"
+            color="blue"
+            :to="localePath('/tools/unit-converter')"
+            :features="unitFeatures"
+          />
+        </div>
+
+        <!-- 구글 애드 영역 -->
+        <div class="mt-12 mb-12">
+          <GoogleAd type="banner" width="100%" height="90px" />
+        </div>
+
+        <div class="mt-16 text-center">
+          <UCard class="max-w-2xl mx-auto">
+            <div class="text-center space-y-4">
+              <UIcon name="i-heroicons-rocket-launch" class="text-3xl text-primary" />
+              <h2 class="text-2xl font-semibold">{{ t('home.futureTools.title') }}</h2>
+              <p class="text-gray-600 dark:text-gray-300">
+                {{ t('home.futureTools.description') }}
+              </p>
+              <div class="flex flex-wrap justify-center gap-2 pt-4">
+                <UBadge color="gray" variant="soft">{{ t('home.futureTools.upcomingTools.currencyConverter') }}</UBadge>
+                <UBadge color="gray" variant="soft">{{ t('home.futureTools.upcomingTools.qrGenerator') }}</UBadge>
+                <UBadge color="gray" variant="soft">{{ t('home.futureTools.upcomingTools.jsonFormatter') }}</UBadge>
+                <UBadge color="gray" variant="soft">{{ t('home.futureTools.upcomingTools.base64Encoder') }}</UBadge>
+                <UBadge color="gray" variant="soft">{{ t('home.futureTools.upcomingTools.imageCompressor') }}</UBadge>
+              </div>
+            </div>
+          </UCard>
+        </div>
+      </div>
+
+      <!-- 우측 사이드바 광고 -->
+      <div class="hidden xl:block w-40 flex-shrink-0">
+        <div class="sticky top-6">
+          <GoogleAd type="sidebar" width="160px" height="600px" />
+        </div>
+      </div>
     </div>
   </div>
 </template>

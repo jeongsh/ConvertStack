@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        black: 'rgb(var(--color-black) / <alpha-value>)'
+      },
       fontFamily: {
         'sans': [
           'Noto Sans',

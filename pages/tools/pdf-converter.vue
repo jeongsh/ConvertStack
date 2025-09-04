@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto px-6 py-8">
-    <div class="flex gap-6 max-w-7xl mx-auto">
+    <div class="flex gap-20 max-w-8xl mx-auto">
       <!-- 좌측 사이드바 광고 -->
       <div class="hidden xl:block w-40 flex-shrink-0">
         <div class="sticky top-6">

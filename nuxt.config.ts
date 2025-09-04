@@ -3,6 +3,50 @@ export default defineNuxtConfig({
   modules: ['@nuxt/ui', '@nuxt/icon', '@pinia/nuxt', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxtjs/i18n'],
   css: ['~/assets/css/main.css'],
   
+  // Tailwind CSS 설정
+  tailwindcss: {
+    config: {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: 'rgb(236 253 245)',
+              100: 'rgb(209 250 229)',
+              200: 'rgb(167 243 208)',
+              300: 'rgb(110 231 183)',
+              400: 'rgb(52 211 153)',
+              500: 'rgb(16 185 129)',
+              600: 'rgb(5 150 105)',
+              700: 'rgb(4 120 87)',
+              800: 'rgb(6 95 70)',
+              900: 'rgb(6 78 59)',
+              950: 'rgb(2 44 34)',
+            },
+            gray: {
+              50: 'rgb(250 250 250)',
+              100: 'rgb(245 245 245)',
+              200: 'rgb(229 229 229)',
+              300: 'rgb(212 212 212)',
+              400: 'rgb(163 163 163)',
+              500: 'rgb(115 115 115)',
+              600: 'rgb(82 82 82)',
+              700: 'rgb(64 64 64)',
+              800: 'rgb(38 38 38)',
+              900: 'rgb(23 23 23)',
+              950: 'rgb(10 10 10)',
+            }
+          }
+        }
+      }
+    }
+  },
+  
+  // Nuxt UI 색상 설정
+  colorMode: {
+    preference: 'system',
+    fallback: 'light'
+  },
+  
   // 다국어 설정
   i18n: {
     locales: [

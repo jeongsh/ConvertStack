@@ -1,13 +1,24 @@
 <template>
-  <div class="container mx-auto px-6 py-8 max-w-4xl">
-    <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-        소개
-      </h1>
-      <p class="text-lg text-gray-600 dark:text-gray-300">
-        ConvertStack에 대해 알아보세요
-      </p>
-    </div>
+  <div class="container mx-auto px-6 py-8">
+    <div class="flex gap-20 max-w-8xl mx-auto">
+      <!-- 좌측 사이드바 광고 -->
+      <div class="hidden xl:block w-40 flex-shrink-0">
+        <div class="sticky top-6">
+          <GoogleAd type="sidebar" width="160px" height="600px" />
+        </div>
+      </div>
+
+      <!-- 메인 콘텐츠 -->
+      <div class="flex-1 min-w-0">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              소개
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300">
+              ConvertStack에 대해 알아보세요
+            </p>
+          </div>
 
     <div class="space-y-8">
       <UCard>
@@ -87,6 +98,16 @@
           </div>
         </div>
       </UCard>
+    </div>
+        </div>
+      </div>
+
+      <!-- 우측 사이드바 광고 -->
+      <div class="hidden xl:block w-40 flex-shrink-0">
+        <div class="sticky top-6">
+          <GoogleAd type="sidebar" width="160px" height="600px" />
+        </div>
+      </div>
     </div>
   </div>
 </template>

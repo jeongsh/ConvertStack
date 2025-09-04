@@ -5,6 +5,40 @@
 /* 다국어 폰트 설정 */
 :root {
   --font-family-base: 'Noto Sans', 'Noto Sans KR', 'Noto Sans JP', 'Noto Sans SC', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  
+  /* Black 색상 변수 - 라이트모드에서는 순수한 검정 */
+  --color-black: 0 0 0;
+  
+  /* Nuxt UI Primary Colors - From oklch design system (더 진하게) */
+  --color-primary-50: 240 253 248;
+  --color-primary-100: 220 252 235;
+  --color-primary-200: 187 247 208;
+  --color-primary-300: 134 239 172;
+  --color-primary-400: 74 222 128;
+  --color-primary-500: 34 197 94;
+  --color-primary-600: 22 163 74;
+  --color-primary-700: 21 128 61;
+  --color-primary-800: 22 101 52;
+  --color-primary-900: 20 83 45;
+  --color-primary-950: 5 46 22;
+  
+  /* Nuxt UI Gray Colors - From oklch neutral system */
+  --color-gray-50: 252 252 252;
+  --color-gray-100: 248 248 248;
+  --color-gray-200: 222 222 222;
+  --color-gray-300: 230 230 230;
+  --color-gray-400: 212 212 212;
+  --color-gray-500: 185 185 185;
+  --color-gray-600: 139 139 139;
+  --color-gray-700: 97 97 97;
+  --color-gray-800: 66 66 66;
+  --color-gray-900: 46 46 46;
+  --color-gray-950: 23 23 23;
+}
+
+/* 다크모드에서 black 색상 변경 */
+.dark {
+  --color-black: 18 18 18; /* hsl(0 0% 7.0588%)를 RGB로 변환 */
 }
 
 * {

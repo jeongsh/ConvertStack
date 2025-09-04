@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-6">
+  <div class="container mx-auto px-6 py-8">
     <BaseConverter
       :title="$t('pages.imageConverter.title')"
       icon="i-heroicons-photo"
