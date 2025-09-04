@@ -24,22 +24,24 @@
       <slot />
     </main>
 
-    <!-- <footer class="border-t bg-white dark:bg-gray-800 mt-16">
+    <footer class="border-t bg-white dark:bg-gray-800 mt-16">
       <div class="container mx-auto px-6 py-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="flex items-center gap-2 mb-4 md:mb-0">
-            <UIcon name="i-heroicons-wrench-screwdriver" class="text-primary" />
+            <UIcon name="i-heroicons-arrow-path" class="text-primary" />
             <span class="font-semibold">ConvertStack</span>
           </div>
           
           <div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
-            <span>© 2024 Converter Tools</span>
+            <span>© 2025 ConvertStack</span>
             <span>•</span>
-            <NuxtLink to="/about" class="hover:text-primary">소개</NuxtLink>
+            <!-- <NuxtLink to="/about" class="hover:text-primary transition-colors">{{ t('nav.about') }}</NuxtLink>
+            <span>•</span> -->
+            <NuxtLink to="/privacy" class="hover:text-primary transition-colors">{{ t('nav.privacy') }}</NuxtLink>
           </div>
         </div>
       </div>
-    </footer> -->
+    </footer>
   </div>
 </template>
 
