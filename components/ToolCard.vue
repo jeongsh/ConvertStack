@@ -2,14 +2,14 @@
   <UCard class="h-full hover:shadow-lg transition-shadow duration-200 group">
     <div class="p-6">
       <div class="flex items-center gap-4 mb-4">
-        <div :class="`p-3 rounded-lg bg-${color}-100 dark:bg-${color}-900/20`">
+        <div :class="`p-3 rounded-lg bg-${color}-100 dark:bg-${color}-900/30`">
           <UIcon 
             :name="icon" 
-            :class="`text-2xl text-${color}-600 dark:text-${color}-400`" 
+            :class="`text-2xl text-${color}-600 dark:text-${color}-300`" 
           />
         </div>
         <div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+          <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">
             {{ title }}
           </h3>
         </div>
@@ -20,7 +20,7 @@
       </p> -->
       
       <div class="space-y-3 mb-6">
-        <h4 class="font-semibold text-gray-900 dark:text-white">{{ t('common.features') }}:</h4>
+        <h4 class="font-semibold text-gray-900 dark:text-gray-100">{{ t('common.features') }}:</h4>
         <ul class="space-y-2">
           <li 
             v-for="feature in features" 
@@ -29,7 +29,7 @@
           >
             <UIcon 
               name="i-heroicons-check-circle" 
-              :class="`text-${color}-500`" 
+              :class="`text-${color}-500 dark:text-${color}-400`" 
               class="text-sm"
             />
             {{ feature }}

@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto p-6">
+  <div class="container mx-auto px-6 py-8">
     <BaseConverter
       :title="$t('pages.colorConverter.title')"
       icon="i-heroicons-swatch"

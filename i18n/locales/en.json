@@ -12,6 +12,10 @@
     "tools": "Tools",
     "themeToggle": "Toggle Theme"
   },
+  "loading": {
+    "title": "Loading Page",
+    "subtitle": "Please wait a moment..."
+  },
   "tools": {
     "colorConverter": {
       "title": "Color Converter",

@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-6 max-w-4xl">
+  <div class="container mx-auto px-6 py-8 max-w-4xl">
     <div class="text-center mb-12">
       <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
         소개

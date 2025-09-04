@@ -12,6 +12,10 @@
     "tools": "도구",
     "themeToggle": "테마 변경"
   },
+  "loading": {
+    "title": "페이지 로딩 중",
+    "subtitle": "잠시만 기다려주세요..."
+  },
   "tools": {
     "colorConverter": {
       "title": "색상 변환기",

@@ -12,6 +12,10 @@
     "tools": "工具",
     "themeToggle": "切换主题"
   },
+  "loading": {
+    "title": "页面加载中",
+    "subtitle": "请稍等..."
+  },
   "tools": {
     "colorConverter": {
       "title": "颜色转换器",
