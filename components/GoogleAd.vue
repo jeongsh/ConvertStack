@@ -60,21 +60,28 @@ const adStyle = computed(() => {
 })
 
 // AdSense 스크립트 로드 및 광고 표시
+const adInitialized = ref(false)
 
 onMounted(async () => {
+  if (adInitialized.value) return
+  
   await nextTick()
-  const ads = document.querySelectorAll('.adsbygoogle')
-  ads.forEach(ins => {
-    // 이미 push()가 된 요소인지 확인
-    if (!(ins as any).dataset.adsbygoogleDone) {
-      try {
+  
+  // 현재 컴포넌트의 광고 요소만 선택
+  const adContainer = document.querySelector(`[data-ad-slot="${props.adSlot}"]`)
+  
+  if (adContainer && !adContainer.hasAttribute('data-adsbygoogle-status')) {
+    try {
+      if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
         ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({})
-        ;(ins as any).dataset.adsbygoogleDone = 'true'
-      } catch (e) {
-        console.error('AdSense push error', e)
+        adContainer.setAttribute('data-adsbygoogle-status', 'done')
+        adInitialized.value = true
       }
+    } catch (e) {
+      console.error('AdSense push error', e)
     }
-  })
+  }
+  
   checkScreenSize()
   window.addEventListener('resize', checkScreenSize)
 })
@@ -102,6 +109,26 @@ const shouldShowAd = computed(() => {
     return !isDesktop.value // 배너/반응형은 모바일/태블릿에서만
   }
   return true // 사각형은 항상 표시
+})
+
+// shouldShowAd 변화 감지하여 AdSense 초기화
+watch(shouldShowAd, async (newValue) => {
+  if (newValue && !adInitialized.value) {
+    await nextTick()
+    const adContainer = document.querySelector(`[data-ad-slot="${props.adSlot}"]`)
+    
+    if (adContainer && !adContainer.hasAttribute('data-adsbygoogle-status')) {
+      try {
+        if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
+          ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({})
+          adContainer.setAttribute('data-adsbygoogle-status', 'done')
+          adInitialized.value = true
+        }
+      } catch (e) {
+        console.error('AdSense push error', e)
+      }
+    }
+  }
 })
 </script>
 

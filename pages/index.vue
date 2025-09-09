@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto px-6 py-8">
     <!-- 모바일/태블릿 상단 광고 -->
-    <div v-show="!isDesktop" class="mb-8">
+    <div class="mb-8">
       <GoogleAd 
         type="banner" 
         width="100%" 
@@ -12,7 +12,7 @@
 
     <div class="flex gap-6 xl:gap-8 max-w-8xl mx-auto">
       <!-- 좌측 사이드바 광고 (데스크탑) -->
-      <div v-show="isDesktop" class="w-40 flex-shrink-0">
+      <div class="w-40 flex-shrink-0">
         <div class="sticky top-6">
           <GoogleAd 
             type="sidebar" 
@@ -101,7 +101,7 @@
         </div> -->
 
         <!-- 모바일/태블릿 하단 광고 -->
-        <div v-show="!isDesktop" class="mt-6">
+        <div class="mt-6">
           <GoogleAd 
             type="responsive" 
             width="100%" 
@@ -112,7 +112,7 @@
       </div>
 
       <!-- 우측 사이드바 광고 (데스크탑) -->
-      <div v-show="isDesktop" class="w-40 flex-shrink-0">
+      <div class="w-40 flex-shrink-0">
         <div class="sticky top-6">
           <GoogleAd 
             type="sidebar" 
@@ -129,26 +129,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
 const localePath = useLocalePath()
-
-// 화면 크기 감지 (반응형 대응)
-const isDesktop = ref(false)
-
-const checkScreenSize = () => {
-  if (typeof window !== 'undefined') {
-    isDesktop.value = window.innerWidth >= 1280 // xl 브레이크포인트
-  }
-}
-
-onMounted(() => {
-  checkScreenSize()
-  window.addEventListener('resize', checkScreenSize)
-})
-
-onBeforeUnmount(() => {
-  if (typeof window !== 'undefined') {
-    window.removeEventListener('resize', checkScreenSize)
-  }
-})
 
 // SEO 메타 데이터 설정
 useSeoMeta({
