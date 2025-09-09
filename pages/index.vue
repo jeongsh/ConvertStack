@@ -118,7 +118,7 @@ useSeoMeta({
   ogTitle: () => t('meta.title'),
   ogDescription: () => t('meta.description'),
   ogImage: '/og-home.png',
-  ogUrl: 'https://converter.example.com',
+  ogUrl: 'https://convertstack.xyz',
   twitterCard: 'summary_large_image',
   twitterTitle: () => t('meta.title'),
   twitterDescription: () => t('meta.description'),
@@ -134,7 +134,7 @@ useHead({
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "ConvertStack",
-        "url": "https://converter.example.com",
+        "url": "https://convertstack.xyz",
         "description": t('meta.description'),
         "author": {
           "@type": "Organization",
@@ -142,7 +142,7 @@ useHead({
         },
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://converter.example.com/search?q={search_term_string}",
+          "target": "https://convertstack.xyz/search?q={search_term_string}",
           "query-input": "required name=search_term_string"
         },
         "mainEntity": [
@@ -150,19 +150,19 @@ useHead({
             "@type": "SoftwareApplication",
             "name": t('tools.colorConverter.title'),
             "applicationCategory": "UtilityApplication",
-            "url": "https://converter.example.com/tools/color-converter"
+            "url": "https://convertstack.xyz/tools/color-converter"
           },
           {
             "@type": "SoftwareApplication", 
             "name": t('tools.unitConverter.title'),
             "applicationCategory": "UtilityApplication",
-            "url": "https://converter.example.com/tools/unit-converter"
+            "url": "https://convertstack.xyz/tools/unit-converter"
           },
           {
             "@type": "SoftwareApplication", 
             "name": t('tools.imageConverter.title'),
             "applicationCategory": "UtilityApplication",
-            "url": "https://converter.example.com/tools/image-converter"
+            "url": "https://convertstack.xyz/tools/image-converter"
           }
         ]
       })

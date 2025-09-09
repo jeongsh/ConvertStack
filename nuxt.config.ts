@@ -105,7 +105,7 @@ export default defineNuxtConfig({
         { property: 'og:title', content: 'ConvertStack | 무료 온라인 변환기' },
         { property: 'og:description', content: '색상 변환기, 단위 변환기 등 다양한 무료 온라인 도구를 제공합니다.' },
         { property: 'og:image', content: '/og-image.png' },
-        { property: 'og:url', content: 'https://converter.example.com' },
+        { property: 'og:url', content: 'https://convertstack.xyz' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'ConvertStack | 무료 온라인 변환기' },
         { name: 'twitter:description', content: '색상 변환기, 단위 변환기 등 다양한 무료 온라인 도구를 제공합니다.' },
@@ -113,7 +113,7 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'canonical', href: 'https://converter.example.com' },
+        { rel: 'canonical', href: 'https://convertstack.xyz' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { 
@@ -135,7 +135,7 @@ export default defineNuxtConfig({
   // Runtime config
   runtimeConfig: {
     public: {
-      siteUrl: 'https://converter.example.com'
+      siteUrl: 'https://convertstack.xyz'
     }
   }
 })

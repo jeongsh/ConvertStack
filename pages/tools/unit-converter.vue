@@ -127,7 +127,7 @@ useSeoMeta({
   ogTitle: '단위 변환기 | 길이, 무게, 온도, 속도 변환 무료 툴 - ConvertStack',
   ogDescription: '길이, 무게, 온도, 속도 등 다양한 단위를 실시간으로 변환하는 무료 온라인 도구입니다.',
   ogImage: '/og-unit-converter.png',
-  ogUrl: 'https://converter.example.com/tools/unit-converter',
+  ogUrl: 'https://convertstack.xyz/tools/unit-converter',
   twitterCard: 'summary_large_image',
   twitterTitle: '단위 변환기 | 길이, 무게, 온도, 속도 변환',
   twitterDescription: '길이, 무게, 온도, 속도 등 다양한 단위를 실시간으로 변환하는 무료 온라인 도구입니다.',
@@ -145,7 +145,7 @@ useHead({
         "name": "단위 변환기",
         "applicationCategory": "UtilityApplication",
         "description": "길이, 무게, 온도, 속도, 부피, 넓이, 시간 단위를 실시간으로 변환하는 무료 온라인 도구",
-        "url": "https://converter.example.com/tools/unit-converter",
+        "url": "https://convertstack.xyz/tools/unit-converter",
         "operatingSystem": "Web",
         "permissions": "무료 사용",
         "offers": {

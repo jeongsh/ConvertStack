@@ -223,7 +223,7 @@ useSeoMeta({
   ogTitle: () => `ConvertStack - ${t('privacy.title')}`,
   ogDescription: () => t('privacy.subtitle'),
   ogImage: '/og-privacy.png',
-  ogUrl: 'https://converter.example.com/privacy',
+  ogUrl: 'https://convertstack.xyz/privacy',
   twitterCard: 'summary_large_image',
   twitterTitle: () => `ConvertStack - ${t('privacy.title')}`,
   twitterDescription: () => t('privacy.subtitle'),
@@ -240,7 +240,7 @@ useHead({
         "@type": "WebPage",
         "name": t('privacy.title') + " - ConvertStack",
         "description": t('privacy.subtitle'),
-        "url": "https://converter.example.com/privacy",
+        "url": "https://convertstack.xyz/privacy",
         "author": {
           "@type": "Organization",
           "name": "ConvertStack"

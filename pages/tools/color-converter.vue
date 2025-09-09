@@ -136,7 +136,7 @@ useSeoMeta({
   ogTitle: '무료 색상 변환기 | HEX ↔ RGB ↔ HSL 변환 도구 - ConvertStack',
   ogDescription: 'HEX, RGB, HSL 색상 코드를 실시간으로 변환하는 무료 온라인 도구입니다.',
   ogImage: '/og-color-converter.png',
-  ogUrl: 'https://converter.example.com/tools/color-converter',
+  ogUrl: 'https://convertstack.xyz/tools/color-converter',
   twitterCard: 'summary_large_image',
   twitterTitle: '무료 색상 변환기 | HEX ↔ RGB ↔ HSL 변환',
   twitterDescription: 'HEX, RGB, HSL 색상 코드를 실시간으로 변환하는 무료 온라인 도구입니다.',
@@ -154,7 +154,7 @@ useHead({
         "name": "색상 변환기",
         "applicationCategory": "UtilityApplication",
         "description": "HEX, RGB, HSL 색상 코드를 실시간으로 변환하는 무료 온라인 도구",
-        "url": "https://converter.example.com/tools/color-converter",
+        "url": "https://convertstack.xyz/tools/color-converter",
         "operatingSystem": "Web",
         "permissions": "무료 사용",
         "offers": {
