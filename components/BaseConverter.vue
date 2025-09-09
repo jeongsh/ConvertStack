@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
     <!-- 모바일/태블릿 상단 광고 -->
-    <div v-show="!isDesktop" class="mb-6">
+    <div v-if="!isDesktop" class="mb-6">
       <GoogleAd 
         type="banner" 
         width="100%" 
@@ -13,7 +13,7 @@
     <!-- 데스크탑 레이아웃 -->
     <div class="flex gap-6 xl:gap-8 max-w-8xl mx-auto">
       <!-- 좌측 사이드바 광고 (데스크탑) -->
-      <div v-show="isDesktop" class="w-40 flex-shrink-0">
+      <div v-if="isDesktop" class="w-40 flex-shrink-0">
         <div class="sticky top-6">
           <GoogleAd 
             type="sidebar" 
@@ -53,7 +53,7 @@
         </UCard>
 
         <!-- 모바일/태블릿 하단 광고 -->
-        <div v-show="!isDesktop" class="mt-6">
+        <div v-if="!isDesktop" class="mt-6">
           <GoogleAd 
             type="responsive" 
             width="100%" 
@@ -64,7 +64,7 @@
       </div>
 
       <!-- 우측 사이드바 광고 (데스크탑) -->
-      <div v-show="isDesktop" class="w-40 flex-shrink-0">
+      <div v-if="isDesktop" class="w-40 flex-shrink-0">
         <div class="sticky top-6">
           <GoogleAd 
             type="sidebar" 

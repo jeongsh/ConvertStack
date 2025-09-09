@@ -1,5 +1,5 @@
 <template>
-  <div v-show="shouldShowAd" class="google-ad-container w-full">
+  <div v-if="shouldShowAd" class="google-ad-container w-full">
     <!-- 실제 Google AdSense 광고 -->
     <ins 
       class="adsbygoogle"
@@ -60,11 +60,11 @@ const adStyle = computed(() => {
 })
 
 // AdSense 스크립트 로드 및 광고 표시
-onMounted(() => {
+
+onMounted(async () => {
+  await nextTick() // DOM 렌더링 완료 후 실행
   try {
-    // AdSense 스크립트가 로드되었는지 확인
     if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
-      // 광고 렌더링
       ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({})
     }
   } catch (error) {
