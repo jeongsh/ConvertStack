@@ -62,14 +62,21 @@ const adStyle = computed(() => {
 // AdSense 스크립트 로드 및 광고 표시
 
 onMounted(async () => {
-  await nextTick() // DOM 렌더링 완료 후 실행
-  try {
-    if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
-      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({})
+  await nextTick()
+  const ads = document.querySelectorAll('.adsbygoogle')
+  ads.forEach(ins => {
+    // 이미 push()가 된 요소인지 확인
+    if (!(ins as any).dataset.adsbygoogleDone) {
+      try {
+        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({})
+        ;(ins as any).dataset.adsbygoogleDone = 'true'
+      } catch (e) {
+        console.error('AdSense push error', e)
+      }
     }
-  } catch (error) {
-    console.error('AdSense error:', error)
-  }
+  })
+  checkScreenSize()
+  window.addEventListener('resize', checkScreenSize)
 })
 
 // 화면 크기 감지 (반응형 대응)
@@ -80,11 +87,6 @@ const checkScreenSize = () => {
     isDesktop.value = window.innerWidth >= 1280 // xl 브레이크포인트
   }
 }
-
-onMounted(() => {
-  checkScreenSize()
-  window.addEventListener('resize', checkScreenSize)
-})
 
 onBeforeUnmount(() => {
   if (typeof window !== 'undefined') {
