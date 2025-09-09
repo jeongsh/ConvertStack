@@ -101,6 +101,7 @@ export default defineNuxtConfig({
         { name: 'description', content: '색상 변환기, 단위 변환기 등 다양한 무료 온라인 도구를 제공합니다. HEX, RGB, HSL 색상 변환 및 길이, 무게, 온도 단위 변환을 간편하게 이용하세요.' },
         { name: 'keywords', content: '색상변환기, 단위변환기, HEX RGB 변환, 길이변환, 무게변환, 온도변환, 온라인도구, 무료도구' },
         { name: 'author', content: 'ConvertStack' },
+        { name: 'google-adsense-account', content: 'ca-pub-2026191960823026' },
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: 'ConvertStack | 무료 온라인 변환기' },
         { property: 'og:description', content: '색상 변환기, 단위 변환기 등 다양한 무료 온라인 도구를 제공합니다.' },
@@ -119,6 +120,13 @@ export default defineNuxtConfig({
         { 
           rel: 'stylesheet', 
           href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap'
+        }
+      ],
+      script: [
+        {
+          async: true,
+          src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2026191960823026',
+          crossorigin: 'anonymous'
         }
       ]
     }
