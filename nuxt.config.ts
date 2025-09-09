@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   modules: ['@nuxt/ui', '@nuxt/icon', '@pinia/nuxt', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxtjs/i18n'],
   css: ['~/assets/css/main.css'],
   ssr: false, // CSR 모드
+  nitro: {
+    preset: 'static'  // Netlify function 말고 정적 모드
+  },
   // Tailwind CSS 설정
   tailwindcss: {
     config: {
