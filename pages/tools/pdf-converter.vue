@@ -1,7 +1,13 @@
 <template>
   <div class="container mx-auto px-6 py-8">
-    <div class="flex gap-20 max-w-8xl mx-auto">
-      <!-- 좌측 사이드바 광고 -->
+    <!-- 모바일/태블릿 상단 광고 -->
+    <div class="block xl:hidden mb-6">
+      <GoogleAd type="banner" width="100%" height="90px" />
+    </div>
+
+    <!-- 데스크탑 레이아웃 -->
+    <div class="flex gap-6 xl:gap-8 max-w-8xl mx-auto">
+      <!-- 좌측 사이드바 광고 (데스크탑) -->
       <div class="hidden xl:block w-40 flex-shrink-0">
         <div class="sticky top-6">
           <GoogleAd type="sidebar" width="160px" height="600px" />
@@ -539,9 +545,14 @@
             @change="handleFileSelect"
           />
         </div>
+
+        <!-- 모바일/태블릿 하단 광고 -->
+        <div class="block xl:hidden mt-6">
+          <GoogleAd type="responsive" width="100%" height="90px" />
+        </div>
       </div>
 
-      <!-- 우측 사이드바 광고 -->
+      <!-- 우측 사이드바 광고 (데스크탑) -->
       <div class="hidden xl:block w-40 flex-shrink-0">
         <div class="sticky top-6">
           <GoogleAd type="sidebar" width="160px" height="600px" />

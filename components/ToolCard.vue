@@ -10,6 +10,8 @@
             color === 'blue' ? 'bg-[rgba(37,99,235,0.125)] dark:bg-[rgba(37,99,235,0.125)]' :
             color === 'green' ? 'bg-[rgba(5,150,105,0.125)] dark:bg-[rgba(5,150,105,0.125)]' :
             color === 'emerald' ? 'bg-[rgba(5,150,105,0.125)] dark:bg-[rgba(5,150,105,0.125)]' :
+            color === 'orange' ? 'bg-[rgba(249,115,22,0.125)] dark:bg-[rgba(249,115,22,0.125)]' :
+            color === 'teal' ? 'bg-[rgba(20,184,166,0.125)] dark:bg-[rgba(20,184,166,0.125)]' :
             `bg-${color}-100 dark:bg-${color}-900/30`
           ]"
         >
@@ -22,6 +24,8 @@
               color === 'blue' ? 'text-[rgb(37,99,235)]' :
               color === 'green' ? 'text-[rgb(5,150,105)]' :
               color === 'emerald' ? 'text-[rgb(5,150,105)]' :
+              color === 'orange' ? 'text-[rgb(249,115,22)]' :
+              color === 'teal' ? 'text-[rgb(20,184,166)]' :
               `text-${color}-600 dark:text-${color}-300`
             ]"
           />
@@ -54,6 +58,8 @@
                 color === 'blue' ? 'text-[rgb(37,99,235)]' :
                 color === 'green' ? 'text-[rgb(5,150,105)]' :
                 color === 'emerald' ? 'text-[rgb(5,150,105)]' :
+                color === 'orange' ? 'text-[rgb(249,115,22)]' :
+                color === 'teal' ? 'text-[rgb(20,184,166)]' :
                 `text-${color}-500 dark:text-${color}-400`
               ]"
             />
@@ -64,7 +70,7 @@
       
       <NuxtLink :to="to" class="block">
         <UButton 
-          :color="color === 'emerald' ? 'green' : color"
+          :color="color === 'emerald' ? 'green' : color === 'orange' ? 'orange' : color === 'teal' ? 'teal' : color"
           size="lg" 
           block
           class="group-hover:shadow-md transition-shadow duration-200"

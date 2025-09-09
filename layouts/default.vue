@@ -25,9 +25,9 @@
     </main>
 
     <footer class="border-t bg-white dark:bg-gray-800 mt-16">
-      <div class="container mx-auto px-6 py-8">
+      <div class="container mx-auto px-6 py-4">
         <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="flex items-center gap-2 mb-4 md:mb-0">
+          <div class="flex items-center gap-2 mb-2 md:mb-0">
             <UIcon name="i-heroicons-arrow-path" class="text-primary" />
             <span class="font-semibold">ConvertStack</span>
           </div>

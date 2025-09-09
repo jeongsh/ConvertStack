@@ -48,14 +48,70 @@
         "Quality settings"
       ]
     },
+    "imageEditor": {
+      "title": "Image Editor",
+      "description": "Advanced image editing with background removal, resizing, filters, and adjustments.",
+      "features": [
+        "AI background removal",
+        "Image resizing",
+        "Filter effects",
+        "Brightness/contrast adjustment"
+      ]
+    },
     "pdfConverter": {
       "title": "PDF Tools",
-      "description": "Merge, split, compress PDF files and convert with Word documents.",
+      "description": "Merge, split, compress PDF files and convert to/from Word documents.",
       "features": [
         "PDF file merging",
         "PDF file splitting",
         "PDF file compression",
         "PDF ↔ Word conversion"
+      ]
+    },
+    "jsonFormatter": {
+      "title": "JSON Formatter",
+      "description": "Format, validate, and compress JSON data with advanced features.",
+      "inputPlaceholder": "Enter JSON data here...",
+      "format": "Format",
+      "minify": "Minify",
+      "validate": "Validate",
+      "clear": "Clear",
+      "copy": "Copy",
+      "download": "Download",
+      "upload": "Upload",
+      "indentSize": "Indent Size",
+      "sortKeys": "Sort Keys",
+      "escapeUnicode": "Unicode Escape",
+      "statistics": "Statistics",
+      "objects": "Objects",
+      "arrays": "Arrays",
+      "properties": "Properties",
+      "size": "File Size",
+      "lines": "Lines",
+      "valid": "Valid",
+      "invalid": "Invalid",
+      "jsonStatus": "JSON Status",
+      "validJson": "Valid JSON",
+      "invalidJson": "Invalid JSON",
+      "error": "An error occurred",
+      "success": "Success",
+      "copied": "Copied",
+      "downloaded": "Downloaded",
+      "features": [
+        "JSON validation",
+        "Beautify/Minify",
+        "Key sorting",
+        "Error detection"
+      ]
+    },
+    "base64Encoder": {
+      "title": "Base64 Encoder",
+      "description": "Safely encode and decode text and files to/from Base64 format",
+      "features": [
+        "Text encoding/decoding",
+        "File encoding support",
+        "Drag and drop",
+        "Real-time conversion"
       ]
     }
   },
@@ -322,6 +378,131 @@
         "unsupportedFile": "Unsupported PDF file or corrupted file.",
         "pdfjsLoadFailed": "PDF.js load failed"
       }
+    },
+    "imageEditor": {
+      "title": "Image Editor",
+      "description": "Advanced image editing with background removal, resizing, filters, and adjustments.",
+      "dropOrClick": "Drag or click to select an image",
+      "supportedFormats": "Supported formats: JPEG, PNG, GIF, WebP, BMP",
+      "selectImage": "Select Image",
+      "editingTools": "Editing Tools",
+      "tabs": {
+        "background": "Background Removal",
+        "resize": "Resize",
+        "filters": "Filters",
+        "adjustments": "Adjustments"
+      },
+      "removeBackground": {
+        "title": "Background Removal",
+        "description": "Automatically remove background from images using AI",
+        "start": "Start Background Removal"
+      },
+      "resize": {
+        "title": "Resize Image",
+        "width": "Width",
+        "height": "Height",
+        "maintainAspect": "Maintain Aspect Ratio",
+        "apply": "Apply"
+      },
+      "filters": {
+        "title": "Filter Effects",
+        "grayscale": "Grayscale",
+        "sepia": "Sepia",
+        "blur": "Blur",
+        "sharpen": "Sharpen",
+        "vintage": "Vintage",
+        "invert": "Invert"
+      },
+      "adjustments": {
+        "title": "Color Adjustments",
+        "brightness": "Brightness",
+        "contrast": "Contrast",
+        "saturation": "Saturation"
+      },
+      "preview": "Preview",
+      "original": "Original",
+      "edited": "Edited",
+      "reset": "Reset",
+      "processing": "Processing...",
+      "seo": {
+        "title": "Image Editor | Background Removal, Resize, Filters - ConvertStack",
+        "description": "Free online image editor with AI background removal, resizing, filter effects, and brightness/contrast adjustments.",
+        "keywords": "image editor, background removal, image resize, image filters, AI background removal, online image editing, free image editor"
+      }
+    },
+    "jsonFormatter": {
+      "title": "JSON Formatter | JSON Validation, Formatting, Compression Tool",
+      "description": "Free online tool to format, validate, compress JSON data and provide structural analysis",
+      "inputPlaceholder": "Enter JSON data...",
+      "format": "Format",
+      "minify": "Minify",
+      "validate": "Validate",
+      "clear": "Clear",
+      "copy": "Copy",
+      "download": "Download",
+      "upload": "Upload",
+      "escape": "Escape",
+      "unescape": "Unescape",
+      "indentSize": "Indent Size",
+      "sortKeys": "Sort Keys",
+      "escapeUnicode": "Unicode Escape",
+      "statistics": "Statistics",
+      "objects": "Objects",
+      "arrays": "Arrays",
+      "properties": "Properties",
+      "size": "Size",
+      "lines": "Lines",
+      "valid": "Valid",
+      "invalid": "Invalid",
+      "jsonStatus": "JSON Status",
+      "validJson": "Valid JSON",
+      "invalidJson": "Invalid JSON",
+      "error": "Error",
+      "success": "Success",
+      "copied": "Copied",
+      "downloaded": "Downloaded",
+      "fileUploaded": "File uploaded",
+      "uploadFailed": "Upload failed",
+      "features": [
+        "Real-time validation",
+        "Format and minify",
+        "Structure analysis",
+        "File input/output"
+      ],
+      "seo": {
+        "title": "JSON Formatter | JSON Validation, Formatting, Compression Tool - ConvertStack",
+        "description": "Free online tool to format, validate, compress JSON data and provide structural analysis. Real-time validation and file input/output features included.",
+        "keywords": "JSON formatter, JSON validation, JSON formatting, JSON compression, JSON parser, online JSON tool"
+      }
+    },
+    "base64Encoder": {
+      "title": "Base64 Encoder",
+      "description": "Encode and decode text and files to/from Base64 format",
+      "encode": "Encode",
+      "decode": "Decode",
+      "plainText": "Plain Text",
+      "base64Text": "Base64 Text",
+      "inputPlaceholder": "Enter text to encode...",
+      "base64Placeholder": "Enter Base64 text to decode...",
+      "base64Result": "Base64 Result",
+      "plainResult": "Decoded Result",
+      "fileEncode": "File Encoding",
+      "dropFile": "Drop files here",
+      "fileSupport": "All file formats supported",
+      "fileResult": "File Encoding Result",
+      "originalSize": "Original File Size",
+      "encodeError": "An error occurred while encoding text",
+      "decodeError": "An error occurred while decoding Base64. Please check if it's valid Base64 text",
+      "aboutBase64": "About Base64",
+      "feature1": "Convert text and binary data to ASCII characters",
+      "feature2": "Used for email attachments and web data transmission",
+      "feature3": "Uses only URL-safe characters to prevent data loss",
+      "feature4": "Data size increases by about 33% but improves compatibility",
+      "seo": {
+        "title": "Base64 Encoder/Decoder | Text & File Conversion Tool - ConvertStack",
+        "description": "Free online tool to safely encode and decode text and files to/from Base64 format. Supports drag and drop file upload.",
+        "keywords": "Base64 encoder, Base64 decoder, file encoding, text encoding, online Base64, free Base64 tool"
+      }
     }
   },
   "common": {
@@ -338,7 +519,16 @@
     "processing": "Processing...",
     "copiedToClipboard": "Copied to clipboard",
     "copyFailed": "Failed to copy",
-    "conversionError": "Conversion Error"
+    "conversionError": "Conversion Error",
+    "example": "Example",
+    "options": "Options",
+    "result": "Result",
+    "quickActions": "Quick Actions",
+    "clear": "Clear",
+    "paste": "Paste",
+    "characters": "Characters",
+    "bytes": "Bytes",
+    "selectFile": "Select File"
   },
   "privacy": {
     "title": "Privacy Policy",

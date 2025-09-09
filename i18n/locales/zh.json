@@ -48,6 +48,16 @@
         "质量设置"
       ]
     },
+    "imageEditor": {
+      "title": "图像编辑器",
+      "description": "提供背景去除、大小调整、滤镜应用等多种图像编辑功能。",
+      "features": [
+        "AI背景去除",
+        "图像调整大小",
+        "滤镜效果",
+        "亮度/对比度调整"
+      ]
+    },
     "pdfConverter": {
       "title": "PDF工具",
       "description": "合并、拆分、压缩PDF文件，与Word文档相互转换。",
@@ -56,6 +66,26 @@
         "PDF文件拆分",
         "PDF文件压缩",
         "PDF ↔ Word转换"
+      ]
+    },
+    "jsonFormatter": {
+      "title": "JSON格式化工具",
+      "description": "格式化、验证、压缩JSON数据，并提供结构分析。",
+      "features": [
+        "实时验证",
+        "格式化和压缩",
+        "结构分析",
+        "文件输入输出"
+      ]
+    },
+    "base64Encoder": {
+      "title": "Base64编码器",
+      "description": "安全地对文本和文件进行Base64编码和解码",
+      "features": [
+        "文本编码/解码",
+        "文件编码支持",
+        "拖放上传",
+        "实时转换"
       ]
     }
   },
@@ -320,6 +350,131 @@
         "unsupportedFile": "不支持的PDF文件或损坏的文件。",
         "pdfjsLoadFailed": "PDF.js加载失败"
       }
+    },
+    "imageEditor": {
+      "title": "图像编辑器",
+      "description": "提供背景去除、大小调整、滤镜应用等多种图像编辑功能。",
+      "dropOrClick": "拖拽或点击选择图像",
+      "supportedFormats": "支持格式：JPEG、PNG、GIF、WebP、BMP",
+      "selectImage": "选择图像",
+      "editingTools": "编辑工具",
+      "tabs": {
+        "background": "背景去除",
+        "resize": "调整大小",
+        "filters": "滤镜",
+        "adjustments": "调整"
+      },
+      "removeBackground": {
+        "title": "背景去除",
+        "description": "使用AI自动从图像中去除背景",
+        "start": "开始背景去除"
+      },
+      "resize": {
+        "title": "调整大小",
+        "width": "宽度",
+        "height": "高度",
+        "maintainAspect": "保持宽高比",
+        "apply": "应用"
+      },
+      "filters": {
+        "title": "滤镜效果",
+        "grayscale": "灰度",
+        "sepia": "褐色",
+        "blur": "模糊",
+        "sharpen": "锐化",
+        "vintage": "复古",
+        "invert": "反转"
+      },
+      "adjustments": {
+        "title": "颜色调整",
+        "brightness": "亮度",
+        "contrast": "对比度",
+        "saturation": "饱和度"
+      },
+      "preview": "预览",
+      "original": "原图",
+      "edited": "已编辑",
+      "reset": "重置",
+      "processing": "处理中...",
+      "seo": {
+        "title": "图像编辑器 | 背景去除、调整大小、滤镜 - ConvertStack",
+        "description": "免费在线图像编辑器，提供AI背景去除、调整大小、滤镜效果、亮度/对比度调整等功能。",
+        "keywords": "图像编辑, 背景去除, 图像调整大小, 图像滤镜, AI背景去除, 在线图像编辑, 免费图像编辑"
+      }
+    },
+    "jsonFormatter": {
+      "title": "JSON格式化工具 | JSON验证整理压缩工具",
+      "description": "格式化、验证、压缩JSON数据并提供结构分析的免费在线工具",
+      "inputPlaceholder": "输入JSON数据...",
+      "format": "格式化",
+      "minify": "压缩",
+      "validate": "验证",
+      "clear": "清空",
+      "copy": "复制",
+      "download": "下载",
+      "upload": "上传",
+      "escape": "转义",
+      "unescape": "反转义",
+      "indentSize": "缩进大小",
+      "sortKeys": "按键排序",
+      "escapeUnicode": "Unicode转义",
+      "statistics": "统计信息",
+      "objects": "对象",
+      "arrays": "数组",
+      "properties": "属性",
+      "size": "大小",
+      "lines": "行数",
+      "valid": "有效",
+      "invalid": "无效",
+      "jsonStatus": "JSON状态",
+      "validJson": "有效JSON",
+      "invalidJson": "无效JSON",
+      "error": "错误",
+      "success": "成功",
+      "copied": "已复制",
+      "downloaded": "已下载",
+      "fileUploaded": "文件已上传",
+      "uploadFailed": "上传失败",
+      "features": [
+        "实时验证",
+        "格式化和压缩",
+        "结构分析",
+        "文件输入输出"
+      ],
+      "seo": {
+        "title": "JSON格式化工具 | JSON验证整理压缩工具 - ConvertStack",
+        "description": "格式化、验证、压缩JSON数据并提供结构分析的免费在线工具。支持实时验证和文件输入输出功能。",
+        "keywords": "JSON 格式化, JSON 验证, JSON 整理, JSON 压缩, JSON 解析器, 在线 JSON 工具"
+      }
+    },
+    "base64Encoder": {
+      "title": "Base64编码器",
+      "description": "对文本和文件进行Base64格式编码和解码",
+      "encode": "编码",
+      "decode": "解码",
+      "plainText": "纯文本",
+      "base64Text": "Base64文本",
+      "inputPlaceholder": "输入要编码的文本...",
+      "base64Placeholder": "输入要解码的Base64文本...",
+      "base64Result": "Base64结果",
+      "plainResult": "解码结果",
+      "fileEncode": "文件编码",
+      "dropFile": "将文件拖到这里",
+      "fileSupport": "支持所有文件格式",
+      "fileResult": "文件编码结果",
+      "originalSize": "原始文件大小",
+      "encodeError": "文本编码时发生错误",
+      "decodeError": "Base64解码时发生错误。请检查是否为有效的Base64文本",
+      "aboutBase64": "关于Base64",
+      "feature1": "将文本和二进制数据转换为ASCII字符",
+      "feature2": "用于电子邮件附件和Web数据传输",
+      "feature3": "仅使用URL安全字符以防止数据丢失",
+      "feature4": "数据大小增加约33%但提高兼容性",
+      "seo": {
+        "title": "Base64编码器/解码器 | 文本和文件转换工具 - ConvertStack",
+        "description": "安全地对文本和文件进行Base64格式编码和解码的免费在线工具。支持拖放文件上传。",
+        "keywords": "Base64编码器, Base64解码器, 文件编码, 文本编码, 在线Base64, 免费Base64工具"
+      }
     }
   },
   "common": {
@@ -336,7 +491,16 @@
     "processing": "处理中...",
     "copiedToClipboard": "已复制到剪贴板",
     "copyFailed": "复制失败",
-    "conversionError": "转换错误"
+    "conversionError": "转换错误",
+    "example": "示例",
+    "options": "选项",
+    "result": "结果",
+    "quickActions": "快速操作",
+    "clear": "清除",
+    "paste": "粘贴",
+    "characters": "字符",
+    "bytes": "字节",
+    "selectFile": "选择文件"
   },
   "privacy": {
     "title": "隐私政策",

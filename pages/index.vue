@@ -1,7 +1,12 @@
 <template>
   <div class="container mx-auto px-6 py-8">
-    <div class="flex gap-20 max-w-8xl mx-auto">
-      <!-- 좌측 사이드바 광고 -->
+    <!-- 모바일/태블릿 상단 광고 -->
+    <div class="block xl:hidden mb-8">
+      <GoogleAd type="banner" width="100%" height="90px" />
+    </div>
+
+    <div class="flex gap-6 xl:gap-8 max-w-8xl mx-auto">
+      <!-- 좌측 사이드바 광고 (데스크탑) -->
       <div class="hidden xl:block w-40 flex-shrink-0">
         <div class="sticky top-6">
           <GoogleAd type="sidebar" width="160px" height="600px" />
@@ -10,7 +15,7 @@
 
       <!-- 메인 콘텐츠 -->
       <div class="flex-1 min-w-0">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           <ToolCard
             :title="t('tools.pdfConverter.title')"
             :description="t('tools.pdfConverter.description')"
@@ -37,6 +42,14 @@
             :to="localePath('/tools/color-converter')"
             :features="colorFeatures"
           />
+          <ToolCard
+            :title="t('tools.jsonFormatter.title')"
+            :description="t('tools.jsonFormatter.description')"
+            icon="i-heroicons-code-bracket"
+            color="orange"
+            :to="localePath('/tools/json-formatter')"
+            :features="jsonFeatures"
+          />
 
           <ToolCard
             :title="t('tools.unitConverter.title')"
@@ -46,14 +59,19 @@
             :to="localePath('/tools/unit-converter')"
             :features="unitFeatures"
           />
+
+          <ToolCard
+            :title="t('tools.base64Encoder.title')"
+            :description="t('tools.base64Encoder.description')"
+            icon="i-heroicons-lock-closed"
+            color="teal"
+            :to="localePath('/tools/base64-encoder')"
+            :features="base64Features"
+          />
+
         </div>
 
-        <!-- 구글 애드 영역 -->
-        <div class="mt-12 mb-12">
-          <GoogleAd type="banner" width="100%" height="90px" />
-        </div>
-
-        <div class="mt-16 text-center">
+        <!-- <div class="mt-16 text-center">
           <UCard class="max-w-2xl mx-auto">
             <div class="text-center space-y-4">
               <UIcon name="i-heroicons-rocket-launch" class="text-3xl text-primary" />
@@ -70,10 +88,15 @@
               </div>
             </div>
           </UCard>
+        </div> -->
+
+        <!-- 모바일/태블릿 하단 광고 -->
+        <div class="block xl:hidden mt-6">
+          <GoogleAd type="responsive" width="100%" height="90px" />
         </div>
       </div>
 
-      <!-- 우측 사이드바 광고 -->
+      <!-- 우측 사이드바 광고 (데스크탑) -->
       <div class="hidden xl:block w-40 flex-shrink-0">
         <div class="sticky top-6">
           <GoogleAd type="sidebar" width="160px" height="600px" />
@@ -249,6 +272,39 @@ const imageFeatures = computed(() => {
   }
 })
 
+const imageEditorFeatures = computed(() => {
+  switch (locale.value) {
+    case 'en':
+      return [
+        "AI background removal",
+        "Image resizing",
+        "Filter effects",
+        "Brightness/contrast adjustment"
+      ]
+    case 'ja':
+      return [
+        "AI背景除去",
+        "画像リサイズ",
+        "フィルター効果",
+        "明度・コントラスト調整"
+      ]
+    case 'zh':
+      return [
+        "AI背景去除",
+        "图像大小调整",
+        "滤镜效果",
+        "亮度/对比度调整"
+      ]
+    default: // ko
+      return [
+        "AI 배경 제거",
+        "크기 조정",
+        "필터 효과",
+        "밝기/대비 조정"
+      ]
+  }
+})
+
 const pdfFeatures = computed(() => {
   switch (locale.value) {
     case 'en':
@@ -278,6 +334,72 @@ const pdfFeatures = computed(() => {
         "PDF 파일 분할",
         "PDF 파일 압축",
         "PDF ↔ Word 변환"
+      ]
+  }
+})
+
+const jsonFeatures = computed(() => {
+  switch (locale.value) {
+    case 'en':
+      return [
+        "JSON validation",
+        "Beautify/Minify",
+        "Key sorting",
+        "Error detection"
+      ]
+    case 'ja':
+      return [
+        "JSON検証",
+        "整形/圧縮",
+        "キーソート",
+        "エラー検出"
+      ]
+    case 'zh':
+      return [
+        "JSON验证",
+        "格式化/压缩",
+        "键排序",
+        "错误检测"
+      ]
+    default: // ko
+      return [
+        "JSON 유효성 검사",
+        "포맷팅/압축",
+        "키 정렬",
+        "에러 검출"
+      ]
+  }
+})
+
+const base64Features = computed(() => {
+  switch (locale.value) {
+    case 'en':
+      return [
+        "Text encoding/decoding",
+        "File encoding support",
+        "Drag and drop",
+        "Real-time conversion"
+      ]
+    case 'ja':
+      return [
+        "テキスト変換",
+        "ファイル変換対応",
+        "ドラッグ&ドロップ",
+        "リアルタイム変換"
+      ]
+    case 'zh':
+      return [
+        "文本编码/解码",
+        "文件编码支持",
+        "拖放上传",
+        "实时转换"
+      ]
+    default: // ko
+      return [
+        "텍스트 인코딩/디코딩",
+        "파일 인코딩 지원",
+        "드래그 앤 드롭",
+        "실시간 변환"
       ]
   }
 })

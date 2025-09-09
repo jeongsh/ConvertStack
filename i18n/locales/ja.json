@@ -48,6 +48,16 @@
         "品質設定"
       ]
     },
+    "imageEditor": {
+      "title": "画像編集ツール",
+      "description": "背景除去、サイズ調整、フィルター適用など様々な画像編集機能を提供します。",
+      "features": [
+        "AI背景除去",
+        "画像リサイズ",
+        "フィルター効果",
+        "明度・コントラスト調整"
+      ]
+    },
     "pdfConverter": {
       "title": "PDFツール",
       "description": "PDFファイルの結合、分割、圧縮、Wordドキュメントとの変換ができます。",
@@ -56,6 +66,26 @@
         "PDFファイル分割",
         "PDFファイル圧縮",
         "PDF ↔ Word変換"
+      ]
+    },
+    "jsonFormatter": {
+      "title": "JSONフォーマッター",
+      "description": "JSONデータのフォーマット、検証、圧縮を行い、構造的な分析を提供します。",
+      "features": [
+        "リアルタイム検証",
+        "フォーマットとミニファイ",
+        "構造分析",
+        "ファイル入出力"
+      ]
+    },
+    "base64Encoder": {
+      "title": "Base64エンコーダー",
+      "description": "テキストやファイルを安全にBase64形式でエンコード・デコードします",
+      "features": [
+        "テキスト変換",
+        "ファイル変換対応",
+        "ドラッグ&ドロップ",
+        "リアルタイム変換"
       ]
     }
   },
@@ -320,6 +350,134 @@
         "unsupportedFile": "サポートされていないPDFファイルまたは破損したファイルです。",
         "pdfjsLoadFailed": "PDF.jsの読み込みに失敗しました"
       }
+    },
+    "imageEditor": {
+      "title": "画像編集ツール",
+      "description": "背景除去、サイズ調整、フィルター適用など様々な画像編集機能を提供します。",
+      "dropOrClick": "画像をドラッグまたはクリックして選択",
+      "supportedFormats": "対応形式：JPEG、PNG、GIF、WebP、BMP",
+      "selectImage": "画像を選択",
+      "editingTools": "編集ツール",
+      "tabs": {
+        "background": "背景除去",
+        "resize": "サイズ変更",
+        "filters": "フィルター",
+        "adjustments": "調整"
+      },
+      "removeBackground": {
+        "title": "背景除去",
+        "description": "AIを使用して画像から背景を自動的に除去します",
+        "start": "背景除去開始"
+      },
+      "resize": {
+        "title": "サイズ変更",
+        "width": "幅",
+        "height": "高さ",
+        "maintainAspect": "縦横比を維持",
+        "apply": "適用"
+      },
+      "filters": {
+        "title": "フィルター効果",
+        "grayscale": "グレースケール",
+        "sepia": "セピア",
+        "blur": "ぼかし",
+        "sharpen": "シャープ",
+        "vintage": "ビンテージ",
+        "invert": "反転"
+      },
+      "adjustments": {
+        "title": "色調整",
+        "brightness": "明度",
+        "contrast": "コントラスト",
+        "saturation": "彩度"
+      },
+      "preview": "プレビュー",
+      "original": "元画像",
+      "edited": "編集済み",
+      "reset": "リセット",
+      "processing": "処理中...",
+      "uploadedImage": "アップロードされた画像",
+      "changeImage": "画像を変更",
+      "uploaded": "アップロード済み",
+      "seo": {
+        "title": "画像編集ツール | 背景除去、サイズ変更、フィルター - ConvertStack",
+        "description": "AI背景除去、サイズ変更、フィルター効果、明度・コントラスト調整など様々な画像編集機能を無料で提供するオンラインツール。",
+        "keywords": "画像編集, 背景除去, 画像サイズ変更, 画像フィルター, AI背景除去, オンライン画像編集, 無料画像編集"
+      }
+    },
+    "jsonFormatter": {
+      "title": "JSONフォーマッター | JSON検証・整形・圧縮ツール",
+      "description": "JSONデータのフォーマット、検証、圧縮を行い、構造的な分析を提供する無料オンラインツール",
+      "inputPlaceholder": "JSONデータを入力...",
+      "format": "フォーマット",
+      "minify": "圧縮",
+      "validate": "検証",
+      "clear": "クリア",
+      "copy": "コピー",
+      "download": "ダウンロード",
+      "upload": "アップロード",
+      "escape": "エスケープ",
+      "unescape": "アンエスケープ",
+      "indentSize": "インデントサイズ",
+      "sortKeys": "キーをソート",
+      "escapeUnicode": "Unicodeエスケープ",
+      "statistics": "統計情報",
+      "objects": "オブジェクト",
+      "arrays": "配列", 
+      "properties": "プロパティ",
+      "size": "サイズ",
+      "lines": "行数",
+      "valid": "有効",
+      "invalid": "無効",
+      "jsonStatus": "JSONステータス",
+      "validJson": "有効なJSON",
+      "invalidJson": "無効なJSON",
+      "error": "エラー",
+      "success": "成功",
+      "copied": "コピーしました",
+      "downloaded": "ダウンロードしました",
+      "fileUploaded": "ファイルがアップロードされました",
+      "uploadFailed": "アップロードに失敗しました",
+      "features": [
+        "リアルタイム検証",
+        "フォーマットとミニファイ",
+        "構造分析",
+        "ファイル入出力"
+      ],
+      "seo": {
+        "title": "JSONフォーマッター | JSON検証・整形・圧縮ツール - ConvertStack",
+        "description": "JSONデータのフォーマット、検証、圧縮、構造分析を行う無料オンラインツール。リアルタイム検証とファイル入出力機能付き。",
+        "keywords": "JSON フォーマッター, JSON 検証, JSON 整形, JSON 圧縮, JSON パーサー, オンライン JSON ツール"
+      }
+    },
+    "base64Encoder": {
+      "title": "Base64エンコーダー",
+      "description": "テキストやファイルをBase64形式でエンコード・デコードします",
+      "encode": "エンコード",
+      "decode": "デコード",
+      "plainText": "プレーンテキスト",
+      "base64Text": "Base64テキスト",
+      "inputPlaceholder": "エンコードするテキストを入力してください...",
+      "base64Placeholder": "デコードするBase64テキストを入力してください...",
+      "base64Result": "Base64結果",
+      "plainResult": "デコード結果",
+      "fileEncode": "ファイルエンコード",
+      "dropFile": "ファイルをここにドロップ",
+      "fileSupport": "すべてのファイル形式に対応",
+      "fileResult": "ファイルエンコード結果",
+      "originalSize": "元のファイルサイズ",
+      "encodeError": "テキストエンコード中にエラーが発生しました",
+      "decodeError": "Base64デコード中にエラーが発生しました。有効なBase64テキストか確認してください",
+      "aboutBase64": "Base64について",
+      "feature1": "テキストとバイナリデータをASCII文字に変換",
+      "feature2": "メール添付ファイルやWebデータ送信に使用",
+      "feature3": "URL安全文字のみ使用してデータ損失を防止",
+      "feature4": "データサイズは約33%増加しますが互換性が向上",
+      "seo": {
+        "title": "Base64エンコーダー/デコーダー | テキスト・ファイル変換ツール - ConvertStack",
+        "description": "テキストやファイルを安全にBase64形式でエンコード・デコードする無料オンラインツールです。ドラッグ&ドロップでファイルアップロード対応。",
+        "keywords": "Base64エンコーダー, Base64デコーダー, ファイルエンコード, テキストエンコード, オンラインBase64, 無料Base64ツール"
+      }
     }
   },
   "common": {
@@ -336,7 +494,16 @@
     "processing": "処理中...",
     "copiedToClipboard": "クリップボードにコピーしました",
     "copyFailed": "コピーに失敗しました",
-    "conversionError": "変換エラー"
+    "conversionError": "変換エラー",
+    "example": "例",
+    "options": "オプション",
+    "result": "結果",
+    "quickActions": "クイックアクション",
+    "clear": "クリア",
+    "paste": "貼り付け",
+    "characters": "文字",
+    "bytes": "バイト",
+    "selectFile": "ファイル選択"
   },
   "privacy": {
     "title": "プライバシーポリシー",

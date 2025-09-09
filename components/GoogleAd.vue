@@ -1,29 +1,29 @@
 <template>
-  <div class="google-ad-container">
+  <div class="google-ad-container w-full">
     <!-- 반응형 광고 영역 -->
     <div 
       v-if="type === 'responsive'"
-      class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 text-center"
+      class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 text-center w-full"
       :style="{ minHeight: height || '250px' }"
     >
       <div class="flex flex-col items-center justify-center h-full">
         <UIcon name="i-heroicons-squares-2x2" class="text-4xl text-gray-400 mb-2" />
         <p class="text-sm text-gray-500">Google AdSense</p>
-        <p class="text-xs text-gray-400">{{ width }} × {{ height }}</p>
+        <p class="text-xs text-gray-400">반응형 광고</p>
       </div>
     </div>
 
     <!-- 배너 광고 -->
     <div 
       v-else-if="type === 'banner'"
-      class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 text-center"
-      :style="{ minHeight: height || '90px', width: width || '100%' }"
+      class="bg-gray-100 dark:bg-gray-800 rounded-lg p-2 md:p-4 text-center w-full"
+      :style="{ minHeight: height || '90px' }"
     >
       <div class="flex items-center justify-center h-full">
-        <UIcon name="i-heroicons-rectangle-stack" class="text-2xl text-gray-400 mr-2" />
+        <UIcon name="i-heroicons-rectangle-stack" class="text-xl md:text-2xl text-gray-400 mr-2" />
         <div>
-          <p class="text-sm text-gray-500">Google AdSense</p>
-          <p class="text-xs text-gray-400">{{ width }} × {{ height }}</p>
+          <p class="text-xs md:text-sm text-gray-500">Google AdSense</p>
+          <p class="text-xs text-gray-400">배너 광고</p>
         </div>
       </div>
     </div>
@@ -31,13 +31,13 @@
     <!-- 사각형 광고 -->
     <div 
       v-else-if="type === 'square'"
-      class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 text-center"
-      :style="{ minHeight: height || '300px', width: width || '300px' }"
+      class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 text-center mx-auto"
+      :style="{ minHeight: height || '300px', width: width || '300px', maxWidth: '100%' }"
     >
       <div class="flex flex-col items-center justify-center h-full">
         <UIcon name="i-heroicons-stop" class="text-4xl text-gray-400 mb-2" />
         <p class="text-sm text-gray-500">Google AdSense</p>
-        <p class="text-xs text-gray-400">{{ width }} × {{ height }}</p>
+        <p class="text-xs text-gray-400">사각형 광고</p>
       </div>
     </div>
 
@@ -45,12 +45,12 @@
     <div 
       v-else-if="type === 'sidebar'"
       class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 text-center"
-      :style="{ minHeight: height || '600px', width: width || '300px' }"
+      :style="{ minHeight: height || '600px', width: width || '160px' }"
     >
       <div class="flex flex-col items-center justify-center h-full">
-        <UIcon name="i-heroicons-bars-3" class="text-4xl text-gray-400 mb-2" />
-        <p class="text-sm text-gray-500">Google AdSense</p>
-        <p class="text-xs text-gray-400">{{ width }} × {{ height }}</p>
+        <UIcon name="i-heroicons-bars-3" class="text-3xl text-gray-400 mb-2" />
+        <p class="text-xs text-gray-500">Google AdSense</p>
+        <p class="text-xs text-gray-400">사이드바</p>
       </div>
     </div>
   </div>
@@ -76,6 +76,13 @@ withDefaults(defineProps<Props>(), {
   /* 실제 구글 애드센스 스타일 */
   position: relative;
   overflow: hidden;
+}
+
+/* 반응형 지원 */
+@media (max-width: 768px) {
+  .google-ad-container {
+    margin: 0 auto;
+  }
 }
 
 /* 실제 구현 시에는 이 클래스들을 제거하고 구글 애드센스 코드를 삽입 */
