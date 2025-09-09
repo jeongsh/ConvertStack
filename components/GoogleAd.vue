@@ -1,58 +1,14 @@
 <template>
-  <div class="google-ad-container w-full">
-    <!-- 반응형 광고 영역 -->
-    <div 
-      v-if="type === 'responsive'"
-      class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 text-center w-full"
-      :style="{ minHeight: height || '250px' }"
-    >
-      <div class="flex flex-col items-center justify-center h-full">
-        <UIcon name="i-heroicons-squares-2x2" class="text-4xl text-gray-400 mb-2" />
-        <p class="text-sm text-gray-500">Google AdSense</p>
-        <p class="text-xs text-gray-400">반응형 광고</p>
-      </div>
-    </div>
-
-    <!-- 배너 광고 -->
-    <div 
-      v-else-if="type === 'banner'"
-      class="bg-gray-100 dark:bg-gray-800 rounded-lg p-2 md:p-4 text-center w-full"
-      :style="{ minHeight: height || '90px' }"
-    >
-      <div class="flex items-center justify-center h-full">
-        <UIcon name="i-heroicons-rectangle-stack" class="text-xl md:text-2xl text-gray-400 mr-2" />
-        <div>
-          <p class="text-xs md:text-sm text-gray-500">Google AdSense</p>
-          <p class="text-xs text-gray-400">배너 광고</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 사각형 광고 -->
-    <div 
-      v-else-if="type === 'square'"
-      class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 text-center mx-auto"
-      :style="{ minHeight: height || '300px', width: width || '300px', maxWidth: '100%' }"
-    >
-      <div class="flex flex-col items-center justify-center h-full">
-        <UIcon name="i-heroicons-stop" class="text-4xl text-gray-400 mb-2" />
-        <p class="text-sm text-gray-500">Google AdSense</p>
-        <p class="text-xs text-gray-400">사각형 광고</p>
-      </div>
-    </div>
-
-    <!-- 세로형 광고 -->
-    <div 
-      v-else-if="type === 'sidebar'"
-      class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 text-center"
-      :style="{ minHeight: height || '600px', width: width || '160px' }"
-    >
-      <div class="flex flex-col items-center justify-center h-full">
-        <UIcon name="i-heroicons-bars-3" class="text-3xl text-gray-400 mb-2" />
-        <p class="text-xs text-gray-500">Google AdSense</p>
-        <p class="text-xs text-gray-400">사이드바</p>
-      </div>
-    </div>
+  <div v-show="shouldShowAd" class="google-ad-container w-full">
+    <!-- 실제 Google AdSense 광고 -->
+    <ins 
+      class="adsbygoogle"
+      :style="adStyle"
+      :data-ad-client="adClient"
+      :data-ad-slot="adSlot"
+      :data-ad-format="adFormat"
+      :data-full-width-responsive="type === 'responsive' ? 'true' : 'false'"
+    ></ins>
   </div>
 </template>
 
@@ -61,13 +17,89 @@ interface Props {
   type: 'responsive' | 'banner' | 'square' | 'sidebar'
   width?: string
   height?: string
-  adSlot?: string // Google AdSense 슬롯 ID (실제 구현 시 사용)
+  adSlot: string // 필수: Google AdSense 슬롯 ID
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   type: 'responsive',
   width: '100%',
   height: '250px'
+})
+
+// AdSense 클라이언트 ID (nuxt.config.ts와 동일)
+const adClient = 'ca-pub-2026191960823026'
+
+// 광고 유형별 설정
+const adFormat = computed(() => {
+  switch (props.type) {
+    case 'responsive':
+      return 'auto'
+    case 'banner':
+      return 'horizontal'
+    case 'square':
+      return 'rectangle'
+    case 'sidebar':
+      return 'vertical'
+    default:
+      return 'auto'
+  }
+})
+
+// 스타일 설정
+const adStyle = computed(() => {
+  const baseStyle: Record<string, string> = {
+    display: 'block'
+  }
+
+  if (props.type !== 'responsive') {
+    if (props.width) baseStyle.width = props.width
+    if (props.height) baseStyle.height = props.height
+  }
+
+  return baseStyle
+})
+
+// AdSense 스크립트 로드 및 광고 표시
+onMounted(() => {
+  try {
+    // AdSense 스크립트가 로드되었는지 확인
+    if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
+      // 광고 렌더링
+      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({})
+    }
+  } catch (error) {
+    console.error('AdSense error:', error)
+  }
+})
+
+// 화면 크기 감지 (반응형 대응)
+const isDesktop = ref(false)
+
+const checkScreenSize = () => {
+  if (typeof window !== 'undefined') {
+    isDesktop.value = window.innerWidth >= 1280 // xl 브레이크포인트
+  }
+}
+
+onMounted(() => {
+  checkScreenSize()
+  window.addEventListener('resize', checkScreenSize)
+})
+
+onBeforeUnmount(() => {
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('resize', checkScreenSize)
+  }
+})
+
+// 광고 표시 여부 결정
+const shouldShowAd = computed(() => {
+  if (props.type === 'sidebar') {
+    return isDesktop.value // 사이드바는 데스크톱에서만
+  } else if (props.type === 'banner' || props.type === 'responsive') {
+    return !isDesktop.value // 배너/반응형은 모바일/태블릿에서만
+  }
+  return true // 사각형은 항상 표시
 })
 </script>
 
