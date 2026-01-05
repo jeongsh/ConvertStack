@@ -1,19 +1,19 @@
 <template>
   <div class="w-full">
     <!-- 모바일/태블릿 상단 광고 -->
-    <div v-if="!isDesktop" class="mb-6">
+    <!-- <div v-if="!isDesktop" class="mb-6">
       <GoogleAd 
         type="banner" 
         width="100%" 
         height="90px" 
         ad-slot="1234567890"
       />
-    </div>
+    </div> -->
 
     <!-- 데스크탑 레이아웃 -->
     <div class="flex gap-6 xl:gap-8 max-w-8xl mx-auto">
       <!-- 좌측 사이드바 광고 (데스크탑) -->
-      <div v-if="isDesktop" class="w-40 flex-shrink-0">
+      <!-- <div v-if="isDesktop" class="w-40 flex-shrink-0">
         <div class="sticky top-6">
           <GoogleAd 
             type="sidebar" 
@@ -22,7 +22,7 @@
             ad-slot="0987654321"
           />
         </div>
-      </div>
+      </div> -->
 
       <!-- 메인 콘텐츠 -->
       <div class="flex-1 min-w-0">
@@ -53,18 +53,18 @@
         </UCard>
 
         <!-- 모바일/태블릿 하단 광고 -->
-        <div v-if="!isDesktop" class="mt-6">
+        <!-- <div v-if="!isDesktop" class="mt-6">
           <GoogleAd 
             type="responsive" 
             width="100%" 
             height="90px" 
             ad-slot="1111111111"
           />
-        </div>
+        </div> -->
       </div>
 
       <!-- 우측 사이드바 광고 (데스크탑) -->
-      <div v-if="isDesktop" class="w-40 flex-shrink-0">
+      <!-- <div v-if="isDesktop" class="w-40 flex-shrink-0">
         <div class="sticky top-6">
           <GoogleAd 
             type="sidebar" 
@@ -73,7 +73,7 @@
             ad-slot="2222222222"
           />
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
